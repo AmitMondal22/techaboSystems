@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('title', $title)
+@section('header_content')
+    <link rel="stylesheet" href="{{ asset('public/client/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/client/seo-styles.css') }}">
+@endsection
 
 @section('content')
 
@@ -250,4 +254,8 @@
         </section>
     </main>
 
+@endsection
+@section('footer_content')
+    <script src="{{ asset('public/client/script.js') }}"></script>
+    <script src="{{ asset('public/client/js/counter.js') }}"></script>
 @endsection

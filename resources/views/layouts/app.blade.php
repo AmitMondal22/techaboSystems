@@ -39,11 +39,10 @@
 
     <title>@yield('title', 'Techavo Solutions')</title>
 
-    <link rel="stylesheet" href="{{ asset('public/client/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/client/seo-styles.css') }}">
+
 
     <!-- Schema.org markup for Google -->
-
+    @yield('header_content')
 </head>
 
 <body>
@@ -180,8 +179,10 @@
         </div>
     </footer>
 
-    <script src="{{ asset('public/client/script.js') }}"></script>
-    <script src="{{ asset('public/client/js/counter.js') }}"></script>
+
+
+
+    @yield('footer_content')
 </body>
 
 </html>
