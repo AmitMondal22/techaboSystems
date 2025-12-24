@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="hero-background">
-                <img src="{{ asset('client/assets/ChatGPT Image Nov 19, 2025, 09_34_18 PM.png') }}" alt="Background" class="hero-bg-image">
+                <img src="{{ asset('public/client/assets/ChatGPT Image Nov 19, 2025, 09_34_18 PM.png') }}" alt="Background" class="hero-bg-image">
             </div>
         </section>
 
@@ -63,23 +63,23 @@
         <div class="news-flash-container">
             <div class="news-flash-content">
                 <!-- Original Items -->
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/1-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/2-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/3-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/4-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/5-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/7-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/8-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/9-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/1-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/2-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/3-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/4-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/5-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/7-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/8-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/9-1.png') }}" alt="Techavo Solutions Logo"></div>
                 <!-- Duplicated Items for Seamless Loop -->
-                {{-- <div class="news-flash-item"><img src="{{ asset('client/assets/Media/1-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/2-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/3-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/4-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/5-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/7-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/8-1.png') }}" alt="Techavo Solutions Logo"></div>
-                <div class="news-flash-item"><img src="{{ asset('client/assets/Media/9-1.png') }}" alt="Techavo Solutions Logo"></div> --}}
+                {{-- <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/1-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/2-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/3-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/4-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/5-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/7-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/8-1.png') }}" alt="Techavo Solutions Logo"></div>
+                <div class="news-flash-item"><img src="{{ asset('public/client/assets/Media/9-1.png') }}" alt="Techavo Solutions Logo"></div> --}}
             </div>
         </div>
 
@@ -101,7 +101,7 @@
                     Brochure</a>
             </div>
             <div class="svg-container">
-                <img class="svg" src="{{ asset('client/assets/Media/Untitled_design__7_-removebg-preview.png') }}" alt="">
+                <img class="svg" src="{{ asset('public/client/assets/Media/Untitled_design__7_-removebg-preview.png') }}" alt="">
             </div>
             <h2 id="products-heading" class="products-header">Our Products curated for your every IoT needs</h2>
 
@@ -111,28 +111,28 @@
             <!-- First Row -->
             <div class="products-card">
 
-                <img class="RTU-img" src="{{ asset('client/assets/Media/server.png') }}" alt="RTU">
+                <img class="RTU-img" src="{{ asset('public/client/assets/Media/server.png') }}" alt="RTU">
                 <div>
                     <h3>Remote Terminal Units (RTUs)</h3>
                     <p>Rugged remote monitoring solutions</p>
                 </div>
             </div>
             <div class="products-card">
-                <img class="data-logger-img" src="{{ asset('client/assets/Media/activity-log.png') }}" alt="Data Logger">
+                <img class="data-logger-img" src="{{ asset('public/client/assets/Media/activity-log.png') }}" alt="Data Logger">
                 <div>
                     <h3>Data Loggers</h3>
                     <p>Precision data collection devices</p>
                 </div>
             </div>
             <div class="products-card">
-                <img class="wifi-img" src="{{ asset('client/assets/Media/wifi.png') }}" alt="IoT Device">
+                <img class="wifi-img" src="{{ asset('public/client/assets/Media/wifi.png') }}" alt="IoT Device">
                 <div>
                     <h3>Gateways</h3>
                     <p>Seamless IoT connectivity</p>
                 </div>
             </div>
             <div class="products-card">
-                <img class="smart-setting-img" src="{{ asset('client/assets/Media/technology.png') }}" alt="Smart Controller">
+                <img class="smart-setting-img" src="{{ asset('public/client/assets/Media/technology.png') }}" alt="Smart Controller">
                 <div>
                     <h3>Smart Controller Units</h3>
                     <p>Advanced automation control</p>
@@ -140,28 +140,28 @@
             </div>
             <!-- Second Row -->
             <div class="products-card">
-                <img src="{{ asset('client/assets/internet-of-things.png') }}" alt="Controller">
+                <img src="{{ asset('public/client/assets/internet-of-things.png') }}" alt="Controller">
                 <div>
                     <h3>Controllers</h3>
                     <p>Advanced control systems</p>
                 </div>
             </div>
             <div class="products-card">
-                <img src="{{ asset('client/assets/microchip.png') }}" alt="IoDevice">
+                <img src="{{ asset('public/client/assets/microchip.png') }}" alt="IoDevice">
                 <div>
                     <h3>IO Device</h3>
                     <p>Network connectivity solutions</p>
                 </div>
             </div>
             <div class="products-card">
-                <img src="{{ asset('client/assets/sensor.png') }}" alt="Sensor Node">
+                <img src="{{ asset('public/client/assets/sensor.png') }}" alt="Sensor Node">
                 <div>
                     <h3>Sensor Nodes</h3>
                     <p>Distributed sensing solutions</p>
                 </div>
             </div>
             <div class="products-card">
-                <img src="{{ asset('client/assets/uninterrupted-power-supply.png') }}" alt="Power and Accessories">
+                <img src="{{ asset('public/client/assets/uninterrupted-power-supply.png') }}" alt="Power and Accessories">
                 <div>
                     <h3>Power & Accessories</h3>
                     <p>Power solutions and add-ons</p>
@@ -188,7 +188,7 @@
                 <div class="solution-gallery">
                     <article class="solution-card">
                         <div class="solution-image">
-                            <img src="{{ asset('client/assets/Media/process-automation.jpg') }}" width="400" height="250"
+                            <img src="{{ asset('public/client/assets/Media/process-automation.jpg') }}" width="400" height="250"
                                 alt="Industrial IoT monitoring system in action" loading="lazy">
                         </div>
                         <div class="solution-content">
@@ -218,7 +218,7 @@
 
                     <article class="solution-card">
                         <div class="solution-image">
-                            <img src="{{ asset('client/assets/Media/utility-management.avif') }}" width="400" height="250"
+                            <img src="{{ asset('public/client/assets/Media/utility-management.avif') }}" width="400" height="250"
                                 alt="Connected healthcare devices" loading="lazy">
                         </div>
                         <div class="solution-content">

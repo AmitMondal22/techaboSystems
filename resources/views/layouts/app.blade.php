@@ -31,16 +31,16 @@
 
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('client/favicon.ico') }}" sizes="32x32">
-    <link rel="apple-touch-icon" href="{{ asset('client/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('public/client/favicon.ico') }}" sizes="32x32">
+    <link rel="apple-touch-icon" href="{{ asset('public/client/apple-touch-icon.png') }}">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://techavosolutions.com/" />
 
     <title>@yield('title', 'Techavo Solutions')</title>
 
-    <link rel="stylesheet" href="{{ asset('client/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('client/seo-styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/client/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/client/seo-styles.css') }}">
 
     <!-- Schema.org markup for Google -->
 
@@ -53,7 +53,7 @@
     <header class="navbar" role="banner">
         <div class="container nav-container">
             <a href="{{ route('home') }}" class="logo" aria-label="Techavo Solutions Home">
-                <span class="logo-img"><img src="{{ asset('client/assets/Media/TECHAVO-HEADER-LOGO.png') }}"
+                <span class="logo-img"><img src="{{ asset('public/client/assets/Media/TECHAVO-HEADER-LOGO.png') }}"
                         alt="Techavo Solutions Logo"></span>
             </a>
             <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation"
@@ -180,8 +180,8 @@
         </div>
     </footer>
 
-    <script src="{{ asset('client/script.js') }}"></script>
-    <script src="{{ asset('client/js/counter.js') }}"></script>
+    <script src="{{ asset('public/client/script.js') }}"></script>
+    <script src="{{ asset('public/client/js/counter.js') }}"></script>
 </body>
 
 </html>
