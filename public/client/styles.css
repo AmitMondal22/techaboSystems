@@ -1,0 +1,3057 @@
+
+
+/* ---------- Global Styles ---------- */
+* {
+    margin: 0;
+    padding: -1px;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Quicksand", sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  
+  h1, h2, h3, h4 {
+    font-weight: 700;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* News Flash Bar */
+  .news-flash-container {
+    background: transparent;
+    color: white;
+    padding: 2rem 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 999;
+    margin-top: 10px; /* Matches navbar height */
+  }
+
+  .news-flash-label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 2;
+  }
+
+  .news-flash-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+    will-change: transform;
+  }
+  
+  .news-flash-content:hover {
+    animation-play-state: paused;
+  }
+
+  .news-flash-item {
+    margin-right: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 15rem;
+  }
+  
+  .news-flash-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .news-flash-container {
+      margin-top: 60px; /* Adjust for mobile header */
+    }
+    
+    .news-flash-label {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.8rem;
+    }
+    
+    .news-flash-item {
+      font-size: 0.85rem;
+      margin-right: 2rem;
+    }
+  }
+
+  /* ---------- Navbar ---------- */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18rem 0rem;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 16rem;
+    margin-left:0rem;
+  }
+  
+  /* Navbar Links */
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+
+  }
+  
+  /* Nav Buttons Container */
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left:2rem;
+  }
+  
+  /* Menu Toggle */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Button Base Styles */
+  .btn-nav {
+    padding: 0.3rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    outline: none;  /* Removes focus outline */
+  }
+  
+  /* Primary Button */
+  .btn-primary {
+    background: #0d6efd;
+    color: white !important;
+    border: 2px solid #0d6efd;
+  }
+  
+  .btn-primary:hover {
+    background: #0b5ed7;
+    border-color: #0b5ed7;
+    transform: translateY(-2px );
+  }
+  
+  /* Outline Button */
+  .btn-outline {
+    background: transparent;
+    color: #0d6efd !important;
+    border: 2px solid #0d6efd;
+  }
+  
+  .btn-outline:hover {
+    background: rgba(13, 110, 253, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .nav-links a {
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;         /* ✅ Makes sure links align nicely */
+    align-items: center;
+    height: 100%;          /* keeps them consistent */
+    outline: none !important;         /* Removes the focus outline */
+    text-decoration: none;
+    position: relative;
+  }
+  
+  /* Active link style */
+  .nav-links a.active,
+  .nav-links a:active,
+  .nav-links a:focus,
+  .nav-links a:hover {
+    color: #0d6efd;
+  }
+  
+  /* Add underline effect only to navigation links (not buttons) */
+  .nav-links > ul > li > a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0d6efd;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links > ul > li > a:hover::after,
+  .nav-links > ul > li > a.active::after {
+    width: 100%;
+  }
+  
+  /* Remove focus outline for all interactive elements */
+  .nav-links a:focus,
+  .nav-links button:focus,
+  .nav-links .btn:focus,
+  .nav-links a:active,
+  .nav-links button:active,
+  .nav-links .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .nav-links .btn-primary {
+    padding: 0.3rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-left: 0rem;
+  }
+  
+  
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff !important;
+    padding: 0.3rem 1rem;
+    border-radius: 6px;
+    margin-left: 0.5rem;
+    transition: 0.3s;
+  }
+  
+  .btn-secondary:hover {
+    background: #fff;
+
+  }
+
+  #view-case-studies:hover{
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Mobile Menu */
+  .menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* ---------- Hero Section ---------- */
+
+  
+  .hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin-left: 5rem;
+    text-align: left;
+    color: rgb(88, 89, 91);
+    font-size: 0.8rem;
+    padding-right: 4rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    margin-left: 2.5rem;
+  }
+  
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-buttons .btn-primary {
+    background: #0d6efd;
+    border: 2px solid #0d6efd;
+  }
+  
+  .hero-buttons .btn-secondary {
+    background-color: #888;
+    border: 2px solid white;
+  }
+  
+  .hero-buttons .btn-primary:hover {
+    background: #0b5ed7;
+    border-color: #0b5ed7;
+    transform: translateY(-2px);
+  }
+  
+  .hero-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+    margin-left: 2.5rem;
+  }
+  
+  .hero p {
+    margin: 0 0 2rem 0;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: 2.5rem;
+    }
+  
+  .highlight {
+    color: #0d6efd;
+  }
+  
+  .hero {
+    margin-top: 3.9rem;
+    background-color:#FAFCFE;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 51vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+  }
+  .hero-bg-image {
+    width: 95%;
+    height: 95%;
+    margin-left: 2.5rem; /* Centers the smaller image */
+}
+  /* ---------- Why Us ---------- */
+  .why-us {
+    padding: 5rem 0;
+    text-align: center;
+    background: #f9f9f9;
+  }
+  
+  .why-us h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .why-us p {
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease !important;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    will-change: transform, background-color, color;
+  }
+  
+  .card:hover, .card.show:hover, .services .card:hover {
+    transform: translateY(-5px) !important;
+    cursor: pointer !important;
+  }
+  
+  .card h3,
+  .card p {
+    transition: color 0.3s ease !important;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Removed text color change on hover */
+  
+  /* Change icon colors on hover */
+  .card:hover .card-icon svg rect,
+  .card.show:hover .card-icon svg rect {
+    fill: rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  .card:hover .card-icon svg path,
+  .card.show:hover .card-icon svg path,
+  .card:hover .card-icon svg circle,
+  .card.show:hover .card-icon svg circle {
+    stroke: white !important;
+  }
+
+  /*Products*/
+  .products {
+    padding: 5rem 0;
+    text-align: center;
+    background: #f9f9f9;
+  }
+  .products h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2a4673; 
+    text-align: left;
+    font-weight: 500;
+    margin-left: 7.5rem;
+    line-height: 1.2;
+  }
+  .products p{
+    margin-left: 7.5rem;
+    line-height: 1.2;
+    text-align: left;
+    width: 50%;
+  }
+  .svg{
+    margin-left: 52rem;
+    background: transparent;
+    margin-top: -18rem;
+    
+  }
+  .section-header h2{
+    margin-top: 2rem;
+  }
+
+.products-cards-container {
+  padding: 1rem 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 1.5rem;
+  justify-content: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: -4.5rem;
+  background-color: #f9f9f9;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -3rem;
+  padding-bottom: 3rem;
+}
+.products-card img {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  cursor: pointer;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  color: #007bff;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.products-card {
+  font-size: 0.9rem;
+  padding: 1rem 1rem;
+  flex: 0 0 calc(25% - 0.75rem);
+  margin: 0;
+  min-height: 100px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.products-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  background: #f8faff;
+}
+
+.products-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.products-card p {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.products-card:hover h3 {
+  color: #007bff;
+}
+
+.products-card:hover p {
+  color: #444;
+}
+
+.products-card p {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  color: #666;
+  flex-grow: 1;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+.action-btn-primary{
+  padding: 0.3rem 1rem;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: 600;
+  margin-left: 0rem;  
+  background-color: #0d6efd;
+  color: white;
+  margin-right: 6.5rem;
+}
+
+  /* ---------- Services ---------- */
+  .services {
+    padding: 5rem 0;
+    text-align: center;
+    background: #f9f9f9;
+  }
+  
+  .services .container > h2 {
+    margin-bottom: 0rem;
+    color: #444444;
+    font-size: 2.5rem;
+  }
+  
+  .services .container > p {
+    margin-bottom: 3rem;
+    color: #666;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+  }
+  
+  .services .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  #why .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  #why .card-icon svg {
+    margin-left: 2rem;
+  }
+  
+  /* Solutions Gallery */
+  .solutions .container {
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    margin-top: -2rem;
+  }
+  
+  .solutions .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .solutions .section-header p {
+    margin-bottom: 0rem;
+    color: #FFFFFF;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .solutions h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .solutions h2::after {
+
+  }
+  
+  .solutions .section-intro {
+    font-size: 1.125rem;
+    color: #475569;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+  
+  .solution-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    margin: 3rem auto 0;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 1rem 1rem;
+  }
+  
+  .solution-card {
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .solution-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+  }
+  
+  .solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .solution-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .solution-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(11, 94, 215, 0.1) 0%, rgba(11, 94, 215, 0.3) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .solution-card:hover .solution-image::before {
+    opacity: 1;
+  }
+  
+  .solution-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .solution-card:hover .solution-image img {
+    transform: scale(1.1);
+  }
+  
+  .solution-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  .solution-content p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+  }
+  
+  
+  .solution-link {
+    margin-top: auto;
+    align-items: flex-start;
+  }
+  
+  .solution-content h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #0f172a;
+    transition: color 0.3s ease;
+  }
+  
+  .solution-card:hover .solution-content h3 {
+    color: #0b5ed7;
+  }
+  
+  .solution-content p {
+    color: #475569;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  
+  .solution-link {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .solution-link:hover {
+    color: #0b5ed7;
+    text-decoration: underline;
+  }
+  
+  .solution-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #64748b;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+  }
+  
+  .services .card {
+    background: white;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: left;
+    min-height: 400px;
+    border-radius: 14px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .services .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-icon {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    pointer-events: none;
+  }
+  
+  .card-icon svg {
+    width: 100px;
+    height: 100px;
+    margin-right: 12rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .card-icon svg {
+
+  }
+  
+  .services .card h3 {
+    color: #666666;
+    margin: 7rem 0 1rem 0;
+    font-size: 1.5rem;
+    margin: 8rem 0 3rem 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  
+  .services .card p {
+    color: #666666;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+    font-size: 1.3rem;
+  }
+  
+  .services .card a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .services .card a:hover {
+    color: #0b5ed7;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 1024px) {
+    .services .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .services .cards {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  p.highlight{
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+  }
+  
+  /* ---------- Solutions/* IoT Solutions Section - Specific to solutions section only */
+  #solutions {
+    padding: 6rem 0 5rem 0rem;
+    background-color: #007BFF;
+    position: relative;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  #solutions .section-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  #solutions .section-intro {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  #solutions .solution-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  #solutions .solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  #solutions .solution-content h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  #solutions .solution-content p {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  #solutions .solution-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  #solutions .solution-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  #about-us{
+    background-color: #0d6efd;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+  }
+  #about-us:hover{
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  #our-services{
+    background-color:#7f8c8d;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+  }
+  #our-services:hover{
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  /* ---------- Solutions in Action ---------- */
+  .solutions {
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #F9F9F9;
+  }
+  
+  .solutions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+   
+  }
+  
+  .solution-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .solution-gallery img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* ---------- Industry Leaders ---------- */
+  .industry-leaders {
+    padding: 0rem 0;
+background: linear-gradient(135deg, #0b5ed7 0%, #0ea5e9 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 56vh;
+    padding-top: -2rem;
+
+  }
+  
+  .industry-leaders .section-header {
+    margin-bottom: 1rem;
+  }
+  
+  .industry-leaders h2 {
+    color: white;
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .industry-leaders h2::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+  }
+  .industry-leaders p{
+    margin-top: 0rem;
+  }
+  
+  .industry-leaders .highlight {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    margin-top: 2rem;
+  }
+  
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .stat-item {
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stat-item h3 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .stat-item p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .stat-item p::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+  }
+  
+  .stat-item:hover p::after {
+    width: 100%;
+  }
+  
+  /* Animation for counter */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .stat-item.animated {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .stat-item.visible {
+    opacity: 1;
+  }
+  
+  /* ---------- CTA ---------- */
+  .cta {
+    padding: 5rem 0;
+    background: #111;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .cta h2 {
+    font: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .cta p {
+    margin-bottom: 2rem;
+    color: #bbb;
+  }
+  .cta {
+  padding: 4rem 1.5rem;
+}
+
+.cta-header {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: transparent !important;
+}
+
+.cta-header h2 {
+  color: #fff !important;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.cta-header p {
+  margin-top: 0.75rem;
+  margin-bottom: 2rem;
+}
+  
+  /* ---------- Footer ---------- */
+  footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+    color: #e0e0e0;
+    padding: 4rem 0 2rem;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .footer-col {
+    padding: 1rem;
+  }
+  
+  .footer-col h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 50px;
+    height: 3px;
+    background: #007bff;
+    border-radius: 3px;
+  }
+  
+  .footer-col h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .footer-col p {
+    margin: 0.5rem 0 1.5rem;
+    line-height: 1.7;
+    max-width: 280px;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+  }
+  
+  .footer-col a {
+    display: block;
+    color: #b0b0b0;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    padding-left: 0;
+    width: fit-content;
+  }
+  
+  .footer-col a::before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-col a:hover {
+    color: #fff;
+    padding-left: 20px;
+  }
+  
+  .footer-col a:hover::before {
+    opacity: 1;
+    left: 0;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background: #007bff;
+    transform: translateY(-3px);
+    padding-left: 0;
+  }
+  
+  .social-links a::before {
+    display: none;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-col li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .contact-info svg {
+    flex-shrink: 0;
+    color: #007bff;
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding: 2rem 2rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .footer-links span {
+    color: #555;
+    font-size: 0.85rem;
+  }
+
+  .copyright {
+    margin: 0 !important;
+    color: #888;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+    
+    .footer-links {
+      justify-content: center;
+    }
+  }
+  
+  /* ---------- Responsive ---------- */
+  @media (max-width: 992px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      background: transparent;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+      color: #333;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .stats {
+      flex-direction: column;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+    }
+    /* ---------- Scroll Animation ---------- */
+.solution-gallery img, .stats div {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .solution-gallery img.show, .stats div.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  /* ---------- Section Headings ---------- */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #111;
+  }
+  
+  section p {
+    font-size: 1.05rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+  }
+  
+  /* ---------- Why Us + Services Cards ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 220px;   /* uniform card height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  /* Card hover effect */
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+  
+  /* Card Titles */
+  .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #0d6efd;
+    font-weight: 600;
+  }
+  
+  /* Card Text */
+  .card p {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .card .icon {
+    font-size: 2rem;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+  }
+  
+  
+  /* ---------- Services Section Variation ---------- */
+  .services .card {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .services .card h3 {
+    margin-bottom: 0.6rem;
+  }
+  
+  /* ---------- Section Background Alternating ---------- */
+  .why-us, .solutions {
+    background: #f9f9f9;
+  }
+  
+  .services {
+    background: #fff;
+  }
+  
+  /* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #3498db;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Responsive Navigation */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transition: 0.3s;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
+
+main {
+    margin-top: 80px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+}
+
+.btn-outline:hover {
+    background: #3498db;
+    color: white;
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+.section-header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: right;
+  max-width: 600px;
+  margin-right: 20px;
+}
+.projects-image {
+  width: 28rem;
+  margin-top: -20rem;
+  margin-bottom: 10rem;
+
+}
+/* Products Section */
+#products-section .view-all-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 0 5rem;
+  text-align: left;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+#products-section .btn-nav.btn-primary {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white !important;
+  padding: 0.8rem 2.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#products-section .btn-nav.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-color: #004085;
+}
+
+#products-section {
+  padding: 10rem 0 10rem 5rem !important;
+  background-color: #f5f5f5 !important; /* Light grey background to match site */
+  background-image: none !important;
+  position: relative !important;
+  width: 100% !important;
+  margin: 5rem 0 0 !important;
+  overflow: hidden !important;
+  display: block !important;
+
+}
+
+
+
+/* Products heading with proper spacing */
+.products-header {
+  margin: 3rem auto 4rem;
+  max-width: 800px;
+  width: calc(100% - 4rem);
+  text-align: center;
+  color: #1a1a1a;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  padding: 2rem 0;
+  position: relative;
+  display: block;
+  clear: both;
+  
+  /* Add a subtle bottom border for visual separation */
+
+  
+  /* Ensure it's always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1;
+  
+  /* Make it stand out more */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.products .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  background: transparent;
+  padding: 0 2rem;
+  margin-top: 1rem;
+  background-color:#f9f9f9
+}
+
+.products .overlay {
+  flex: 1;
+  max-width: 50%;
+}
+
+.products .section-header {
+  font-size: 2.5rem;
+  color: #263864;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.products .section-intro {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.products .projects-image {
+  flex: 1;
+  max-width: 45%;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .products .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .products .overlay,
+  .products .projects-image {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .products .projects-image {
+    margin-top: 2rem;
+  }
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  line-height: 3rem;
+  font-weight: 500;
+}
+
+.section-header p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background: #3498db;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .section-title h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+}
+  
+  }
+/* -------------------------
+   MOBILE NAV + CTA FIXES
+   Target: max-width: 992px only
+   Paste at end of styles.css
+   ------------------------- */
+
+html, body { overflow-x: hidden !important; }
+
+/* Use transform (not right/left) to avoid causing horizontal scroll */
+@media (max-width: 992px) {
+  /* Nav becomes full-screen panel that uses transform for animation */
+  .nav-links {
+    position: fixed !important;
+    top: 72px !important;
+    right: 0 !important;
+    left: 0 !important;                 /* cover full width */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: calc(100vh - 72px) !important;
+    background: #fff !important;
+    padding: 1.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    align-items: flex-start !important;
+    z-index: 1400 !important;
+    transform: translateY(-6px) translateX(0) !important;
+    transition: transform .28s cubic-bezier(.2,.9,.2,1);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Keep it visually hidden until opened via .active */
+  .nav-links:not(.active) {
+    transform: translateY(-6px) translateX(100%) !important; /* slide out right */
+  }
+  .nav-links.active {
+    transform: translateY(0) translateX(0) !important;      /* slide in */
+  }
+
+  /* Overlay that dims page when nav open */
+  .mobile-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,0.45) !important;
+    display: none !important;
+    z-index: 1350 !important;
+    opacity: 0 !important;
+    transition: opacity .2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-overlay.active {
+    display: block !important;
+    opacity: 1 !important;
+  }
+
+  /* Ensure header remains visible above overlay */
+  .navbar { z-index: 1450 !important; }
+
+  /* CTA: ensure it sits above overlay and nav if necessary and is centered */
+  .cta,
+  .cta-header,
+  .cta .container {
+    position: relative !important;
+    z-index: 1500 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  .cta-header h2,
+  .cta h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: .6rem !important;
+    word-break: break-word !important;
+  }
+
+  .cta p { font-size: 0.95rem !important; color: #d6d6d6 !important; margin-bottom: .9rem !important; }
+
+  .cta a.btn-primary,
+  .cta .btn-primary,
+  .cta .action-btn-primary {
+    width: 100% !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: .95rem 1rem !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+    display: block !important;
+    box-shadow: 0 8px 20px rgba(13,110,253,0.14) !important;
+  }
+
+  /* Prevent any hero / product elements accidentally pushing width */
+  .hero, .products-cards-container, .news-flash-container, .solution-gallery {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Make sure images inside these sections don't overflow */
+  .hero-bg-image, .svg, .svg-container, .projects-image img, .solution-image img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+  }
+  /* -------------------------------------------------
+   MOBILE FIXES — Trusted by Industry Leaders (blue section)
+   ------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Section wrapper */
+  .industry-leaders {
+    padding: 2.2rem 1rem 2.8rem !important;
+    text-align: center !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Heading */
+  .industry-leaders h2,
+  .industry-leaders .section-header h2 {
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    padding: 0 0.5rem !important;
+    word-break: break-word !important;
+  }
+
+  /* Description / subtext */
+  .industry-leaders p,
+  .industry-leaders .section-header p {
+    font-size: 0.95rem !important;
+    line-height: 1.45 !important;
+    color: rgba(255,255,255,0.85) !important;
+    max-width: 85% !important;
+    margin: 0.5rem auto 1.5rem !important;
+  }
+
+  /* Stats container */
+  .stats {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Stat cards */
+  .stat-item {
+    width: 46% !important;            /* 2 cards per row */
+    min-width: 150px !important;
+    padding: 1.3rem 0.8rem !important;
+    border-radius: 14px !important;
+    background: rgba(255,255,255,0.10) !important;
+    box-shadow: inset 0 -2px 0 rgba(255,255,255,0.12) !important;
+    backdrop-filter: blur(4px) !important;
+    text-align: center !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  /* Stat number */
+  .stat-item h3 {
+    font-size: 1.65rem !important;
+    margin-bottom: 0.35rem !important;
+    font-weight: 700 !important;
+  }
+
+  /* Stat label */
+  .stat-item p {
+    font-size: 0.85rem !important;
+    line-height: 1.3 !important;
+    color: rgba(255,255,255,0.9) !important;
+  }
+}
+
+/* Even smaller screens <= 480px */
+@media (max-width: 480px) {
+  .stat-item {
+    width: 100% !important;          /* 1 card per row */
+    padding: 1.2rem 0.9rem !important;
+  }
+}
+/* ---------------------------
+   MOBILE: "What do we do?" CTA fixes
+   Paste at end of styles.css
+   --------------------------- */
+@media (max-width: 520px) {
+  /* Ensure the services/why area doesn't overflow */
+  #why, .services, .services .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Center the small intro text block and remove large box shadow spacing */
+  .services .section-header,
+  .services .section-intro {
+    max-width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    padding: 0 0.25rem !important;
+  }
+
+  /* Make the about-us row stack and center the buttons */
+  .about-us,
+  .services .about-us {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin: 0.6rem auto 0.2rem auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Buttons: full-width (but not too wide), larger tap targets, consistent radius */
+  .about-us button,
+  .about-us .btn-primary,
+  .about-us .btn-secondary,
+  #about-us,
+  #our-services {
+    width: 92% !important;
+    max-width: 360px !important;
+    padding: 12px 16px !important;
+    font-size: 1rem !important;
+    border-radius: 10px !important;
+    display: block !important;
+    text-align: center !important;
+    box-shadow: 0 8px 20px rgba(13,110,253,0.12) !important;
+    margin: 0 auto !important;
+  }
+
+  /* Ensure primary/secondary visual styles remain */
+  #about-us { background-color: #0d6efd !important; color: #fff !important; border: none !important; }
+  #our-services { background-color: #7f8c8d !important; color: #fff !important; border: none !important; }
+
+  /* If there's a small illustration next to the buttons, move it below the buttons */
+  .about-us img,
+  .about-us .small-illustration,
+  .services .small-illustration {
+    order: 3 !important;
+    margin-top: 8px !important;
+    margin-left: 0 !important;
+    max-width: 110px !important;
+    width: auto !important;
+    opacity: 0.98 !important;
+    align-self: center !important;
+  }
+
+  /* Slightly reduce whitespace below so industry band follows closely */
+  .services { padding-bottom: 1.25rem !important; padding-top: 1.75rem !important; }
+  /* keep subsequent blue band snug to the buttons */
+  .industry-leaders { margin-top: 0 !important; }
+}
+
+/* Slightly larger small-tablet: keep buttons side-by-side if space allows */
+@media (min-width: 521px) and (max-width: 768px) {
+  .about-us {
+    flex-direction: row !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .about-us button, .about-us .btn-primary, .about-us .btn-secondary, #about-us, #our-services {
+    width: auto !important;
+    min-width: 160px !important;
+    padding: 10px 18px !important;
+  }
+  .about-us .small-illustration { order: 3 !important; margin-left: 8px !important; max-width: 90px !important; }
+}
+/* -------------------------------------------------
+   MOBILE TUNE — "What do we do?" heading (id=why-choose-us)
+   Paste at end of styles.css
+   ------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* Container around the heading - ensure no awkward side padding or overflow */
+  #why, #why .container, .services, .services .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* The heading itself */
+  #why-choose-us {
+    font-size: 1.6rem !important;        /* readable on phones */
+    line-height: 1.18 !important;
+    font-weight: 700 !important;
+    text-align: center !important;      /* centered like screenshot */
+    margin: 0.25rem auto 0.6rem auto !important;
+    color: #0f1723 !important;          /* dark, matches site */
+    letter-spacing: -0.01em !important;
+    max-width: 95% !important;
+    word-break: break-word !important;
+    padding: 0 0.25rem !important;
+  }
+
+  /* Subheading / intro beneath the heading (if present) */
+  #why-choose-us + .section-intro,
+  .services .section-intro,
+  #why .section-intro {
+    display: block !important;
+    font-size: 0.98rem !important;
+    color: #58606a !important;
+    line-height: 1.5 !important;
+    margin: 0.5rem auto 1rem auto !important;
+    max-width: 92% !important;
+    text-align: center !important;
+    padding: 0 0.25rem !important;
+  }
+
+  /* Buttons under the heading - stack and center on mobile */
+  #about-us, #our-services,
+  .services .btn-primary, .services .btn-secondary,
+  .services button, .services .btn {
+    display: block !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 0.6rem auto 0 !important;
+    padding: 0.9rem 1rem !important;
+    font-size: 1rem !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+  }
+
+  /* If you want the two buttons to appear side-by-side on larger small screens (>=540px) */
+  @media (min-width: 540px) {
+    .services .about-row { display: flex !important; gap: .75rem !important; justify-content: center !important; align-items: center !important; }
+    .services .about-row button, .services .about-row .btn { width: auto !important; flex: 0 0 auto !important; min-width: 180px !important; }
+  }
+
+  /* Micro polish: reduce top/bottom whitespace so section doesn't feel huge */
+  .services { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+}
+
+/* ---------------------------
+   HOTFIX: Center CTA + push illustration below (phones)
+   Paste at very end of styles.css
+   --------------------------- */
+@media (max-width: 520px) {
+
+  /* Ensure the services/why wrapper is full-width and centered */
+  .services, #why, .services .container, #why .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Center the section intro and remove large inset shadows pushing content */
+  .services .section-header,
+  .services .section-intro,
+  #why .section-header,
+  #why .section-intro {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 96% !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Make the about-us area a centered column so buttons stack */
+  .about-us,
+  .services .about-us,
+  #why .about-us {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0.4rem auto 0.6rem auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Buttons: same visual size, centered, full-ish width for good tap target */
+  .about-us button,
+  .about-us .btn-primary,
+  .about-us .btn-secondary,
+  #about-us,
+  #our-services,
+  .services button,
+  .services .btn {
+    display: block !important;
+    width: 90% !important;
+    max-width: 360px !important;
+    min-width: 0 !important;
+    padding: 12px 14px !important;
+    font-size: 1rem !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    margin: 0 !important;
+    box-shadow: 0 10px 22px rgba(13,110,253,0.12) !important;
+  }
+
+  /* keep visual primary/secondary differences */
+  #about-us { background-color: #0d6efd !important; color: #fff !important; border: none !important; }
+  #our-services { background-color: #7f8c8d !important; color: #fff !important; border: none !important; }
+
+  /* Move any small illustration under the buttons and center it */
+  .about-us img,
+  .about-us .small-illustration,
+  .services .small-illustration,
+  #why .small-illustration,
+  .about-us .hero-illustration {
+    order: 3 !important;
+    display: block !important;
+    margin: 8px auto 0 auto !important;
+    max-width: 110px !important;
+    width: auto !important;
+    height: auto !important;
+    box-sizing: border-box !important;
+    opacity: 1 !important;
+  }
+
+  /* In case the illustration was absolutely positioned, neutralize it */
+  .about-us img[style], .about-us .small-illustration[style], .services .small-illustration[style] {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+  }
+
+  /* Remove weird left offsets that may be coming from siblings (patch common offenders) */
+  .svg, .svg-container, .projects-image, .projects-image img, .hero-background, .hero-bg-image {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Reduce excessive vertical whitespace so the blue band follows closer */
+  .services { padding-bottom: 1.2rem !important; padding-top: 1.6rem !important; }
+  .industry-leaders { margin-top: 0 !important; padding-top: 1.6rem !important; }
+}
+/* =====================================================
+   HOTFIX: Remove unwanted stacking / overlaps (Hero)
+   Paste this at the *end* of styles.css
+   ===================================================== */
+
+/* 1) Make hero sit in normal flow and be on top when needed */
+.hero,
+.hero * {
+  position: relative !important;
+  z-index: 5 !important;       /* slight elevation so hero content remains visible */
+  transform: none !important;  /* remove accidental translate */
+  margin-top: 0 !important;
+}
+
+/* 2) Reset common offenders that pull content up over the hero */
+.products-cards-container,
+.products .projects-image,
+.products .svg-container,
+.section-header,
+.cards,
+.card,
+.solution-card,
+.industry-leaders,
+.news-flash-container,
+.services,
+#solutions,
+#products-section,
+.products,
+.industry-leaders {
+  position: relative !important;
+  transform: none !important;
+  margin-top: 0 !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: 1 !important;
+}
+
+/* 3) Remove negative margin hacks that often cause overlap */
+*[style*="margin-top:-"],
+*[style*="margin:-"],
+.products-cards-container[style],
+[style*="translateY("],
+[style*="translate("] {
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* 4) Specifically neutralize previously-known negative values */
+.products-cards-container { margin-top: 0 !important; margin-bottom: 0 !important; padding-top: 1rem !important; }
+.hero { margin-bottom: 0 !important; padding-bottom: 1rem !important; }
+
+/* 5) Prevent absolute-positioned children from escaping their parent box */
+.hero img, .hero .hero-background, .hero .hero-bg-image {
+  position: relative !important;
+  max-width: 100% !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+/* 6) Ensure the next section after hero has a clean top spacing */
+.hero + section,
+.hero + .industry-leaders,
+.hero + .products,
+.hero + .services {
+  margin-top: 0.75rem !important;
+  padding-top: 1rem !important;
+}
+
+/* 7) Force all sections to participate in layout flow (no accidental absolute) */
+main section, main > div, footer, header {
+  position: relative !important;
+  z-index: 1 !important;
+  transform: none !important;
+}
+
+/* 8) Defensive: fix any elements with overly large z-index that can float over the hero */
+*[style*="z-index:"] {
+  z-index: unset !important;
+}
+/* then re-enable header/nav and hero as necessary */
+.navbar { z-index: 1200 !important; }
+.hero { z-index: 10 !important; }
+
+/* 9) If a script added inline 'top: -...px' or similar, nullify it */
+*[style*="top:-"], *[style*="top: -"] { top: auto !important; }
+
+/* 10) small-screen polish: ensure no overlaps due to transforms */
+@media (max-width: 992px) {
+  .solution-card, .card, .products-card, .stat-item {
+    transform: none !important;
+  }
+}
+
+/* End of overlap hotfix */
+
+/* -----------------------------
+   Mobile nav — polished look
+   Paste at end of styles.css
+   ----------------------------- */
+@media (max-width: 992px) {
+  /* Panel */
+  .nav-links {
+    position: fixed !important;
+    top: 72px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - 72px) !important;
+    background: #ffffff !important;
+    padding: 1.25rem 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: .75rem !important;
+    align-items: stretch !important;
+    z-index: 1400 !important;
+    transform: translateY(-6px) translateX(100%) !important;
+    transition: transform .28s cubic-bezier(.2,.9,.2,1), opacity .18s ease !important;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    opacity: 0;
+  }
+  .nav-links.active {
+    transform: translateY(0) translateX(0) !important;
+    opacity: 1 !important;
+  }
+
+  /* Add internal header row for close + logo optional */
+  .nav-links .mobile-header {
+    display:flex;
+    gap: .5rem;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgba(15,23,42,0.05);
+    margin-bottom: .75rem;
+  }
+  .nav-links .mobile-header .nav-close {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    padding: .4rem;
+    cursor: pointer;
+    color: #333;
+  }
+
+  /* Nav list & links */
+  .nav-links ul { display:flex; flex-direction:column; gap: .6rem; padding: 0; margin: .5rem 0 0 0; list-style: none; }
+  .nav-links a.nav-link {
+    padding: .75rem 0.5rem !important;
+    display:block !important;
+    color: #1f2937 !important;
+    font-weight: 600 !important;
+    border-radius: 8px;
+  }
+  .nav-links a.nav-link:focus,
+  .nav-links a.nav-link:hover {
+    background: rgba(13,110,253,0.06);
+    outline: none;
+  }
+
+  /* CTA buttons */
+  .nav-buttons { margin-top: .75rem; display:flex; flex-direction:column; gap:.6rem; width:100%; }
+  .nav-buttons .btn-nav { width:100%; padding:.65rem .8rem; border-radius:10px; font-weight:700; text-align:center; }
+  .nav-buttons .btn-primary { background:#0d6efd; color:#fff !important; border: 2px solid #0d6efd; }
+  .nav-buttons .btn-outline { background: transparent; color:#0d6efd !important; border: 2px solid #0d6efd; }
+
+  /* overlay */
+  .mobile-overlay { position: fixed !important; inset: 0 !important; background: rgba(0,0,0,0.45) !important; display:none !important; z-index: 1350 !important; opacity: 0; transition: opacity .2s ease; }
+  .mobile-overlay.active { display:block !important; opacity: 1 !important; }
+
+  /* ensure toggle is visible */
+  .menu-toggle { display:block !important; z-index:1500 !important; }
+
+  /* small polish for accessibility */
+  .nav-links a:focus-visible, .nav-links .nav-close:focus-visible { outline: 3px solid rgba(13,110,253,0.18); outline-offset: 2px; border-radius:8px; }
+}
+
+/* -------------------------------------
+   HERO IMAGE BELOW TEXT (Mobile Only)
+   ------------------------------------- */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: -4rem;
+  }
+  /* Make hero section behave like a vertical column */
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    height: auto !important;
+  }
+
+  /* Ensure hero text comes first */
+  .hero-content {
+    order: 1 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    bottom: 2rem;
+  }
+  
+
+  /* Make background image stack UNDER the text */
+  .hero-background {
+    position: relative !important;
+    order: 2 !important;
+    width: 100% !important;
+    height: 5rem !important;
+    margin-top: 0rem !important;
+  }
+
+
+  .hero-bg-image {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+    bottom: 13rem;
+    margin-bottom: 0rem;
+  }
+
+  /* Remove overlay effects for mobile clarity */
+  .hero-overlay {
+    display: none !important;
+  }
+  
+}
+/* ==============================
+   FORCE-LIFT HERO TEXT (mobile)
+   ============================== */
+@media (max-width: 768px) {
+
+  /* Defensive: make hero safe to adjust and not be clipped by header */
+  .hero {
+    position: relative !important;
+    padding-top: 1.25rem !important;   /* ensure enough space under navbar */
+    padding-bottom: 1.25rem !important;
+    overflow: visible !important;
+    z-index: 8 !important;
+    width: 180%;
+  }
+
+  /* Force the hero-content up by ~2rem */
+  .hero .hero-content,
+  .hero-content {
+    position: relative !important;            /* allow top to work */
+    top: -4.2rem !important;                    /* primary lift */
+    transform: translateY(-0.125rem) !important; /* tiny nudge fallback */
+    /* fallback stronger transform in case top is ignored */
+    -webkit-transform: translateY(-2rem) !important;
+    -ms-transform: translateY(-2rem) !important;
+    transform: translateY(-2rem) !important;
+    margin-top: 0 !important;                 /* neutralize other margins */
+    z-index: 12 !important;                   /* keep it above nearby content */
+    will-change: transform, top !important;
+  }
+
+  /* If something else forces hero-content to layout as flex child,
+     we also nudge the parent so visual position is guaranteed. */
+  .hero .hero-content::before {
+    content: "" !important;
+    display: block !important;
+    height: 0.01px !important;
+  }
+
+  /* Slight tweak to hero-bg image so it doesn't visually collide */
+  .hero-background,
+  .hero-bg-image {
+    margin-top: 0.5rem !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+}
+/* ---------------------------------------
+   HERO — Stretch container full width
+   (Mobile Only)
+   --------------------------------------- */
+@media (max-width: 768px) {
+
+  .hero-content {
+    width: 100% !important;          /* take full width */
+    max-width: 100% !important;      /* remove desktop max-width constraint */
+    padding-left: 0 !important;      /* remove left gap */
+    padding-right: 0 !important;     /* remove right gap */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0rem;
+  }
+  
+  /* Ensure text aligns nicely in the center */
+  .hero h1,
+  .hero p {
+    width: 95% !important;       
+    padding-bottom: 2rem !important;    /* small breathing room */
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .hero h1 {
+    padding-bottom: 0rem;
+    padding-top: 2rem;
+  }
+  .hero p{
+    margin-top: -2rem !important;
+    height: 8rem;
+  }
+  /* Stretch the buttons too */
+  .hero-buttons {
+    width: 95% !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    z-index: 1000;
+    top: -6rem;
+  }
+
+  .hero-buttons a {
+    width: 100% !important;          /* full-width button */
+    max-width: none !important;
+  }
+
+
+}
+/* ---------------------------
+   Fancy Hamburger (mobile)
+   Paste at end of styles.css
+   --------------------------- */
+
+/* Base button */
+.menu-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 40px;
+  background :#FAFCFE;
+  border: 1px solid rgba(15,23,42,0.06);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(12,35,78,0.06);
+  cursor: pointer;
+  padding: 6px;
+  transition: transform .18s ease, box-shadow .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* hover / active */
+.menu-toggle:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(12,35,78,0.08); }
+.menu-toggle:active { transform: translateY(0); }
+
+/* invisible text for screen readers still present */
+.menu-toggle .sr-only { position: absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+
+/* Hamburger wrapper (three bars) */
+.menu-toggle .hamburger {
+  display: block;
+  position: relative;
+  width: 22px;
+  height: 16px;
+}
+
+/* Bars */
+.menu-toggle .hamburger .bar {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #0d6efd;              /* brand blue */
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform .32s cubic-bezier(.2,.9,.3,1), opacity .18s ease, top .18s ease;
+}
+
+/* bar positions */
+.menu-toggle .hamburger .bar:nth-child(1) { top: 0; }
+.menu-toggle .hamburger .bar:nth-child(2) { top: 7px; }
+.menu-toggle .hamburger .bar:nth-child(3) { top: 14px; }
+
+/* Open state -> morph to X */
+.menu-toggle.open .hamburger .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  top: 0;
+}
+.menu-toggle.open .hamburger .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.3);
+}
+.menu-toggle.open .hamburger .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  top: 14px;
+}
+
+/* Keyboard focus visible */
+.menu-toggle:focus-visible {
+  outline: 3px solid rgba(13,110,253,0.18);
+  outline-offset: 3px;
+}
+
+/* Small screens: ensure size & spacing */
+@media (max-width: 992px) {
+  .menu-toggle { width: 46px; height: 40px; padding: 6px; }
+  .menu-toggle .hamburger { width: 20px; height: 14px; }
+  .menu-toggle .hamburger .bar:nth-child(2) { top: 6px; }
+  .menu-toggle .hamburger .bar:nth-child(3) { top: 12px; }
+}
+
+
+@media (max-width: 768px) {
+.nav-buttons{
+  margin-top: 10rem;
+  display: flex;
+  width: 100%;
+  margin-left: 0rem;
+  gap: 1.2rem;
+}
+}
+/* -----------------------------
+   MOBILE: Ensure all 4 stat cards show
+   Paste at end of styles.css
+   ----------------------------- */
+@media (max-width: 768px) {
+
+  /* Let the blue band grow naturally instead of forcing a viewport height */
+  .industry-leaders {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.5rem !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+   .section-header{
+    background-color: transparent;
+    box-shadow: none;
+   }
+
+  /* Use a compact 2x2 grid so all 4 stat items appear */
+  .stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.9rem 0.9rem !important; /* row / column gap */
+    align-items: stretch !important;
+    justify-items: stretch !important;
+    width: 100% !important;
+    padding: 0.5rem 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Stat card sizing and polish */
+  .stat-item {
+    width: 100% !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background: rgba(255,255,255,0.10) !important;
+  }
+
+  .stat-item h3 {
+    font-size: 1.6rem !important;
+    margin: 0 !important;
+  }
+
+  .stat-item p {
+    font-size: 0.9rem !important;
+    margin: 0.25rem 0 0 0 !important;
+  }
+
+  /* Ensure no clipping from ancestors */
+  .industry-leaders,
+  .industry-leaders * {
+    overflow: visible !important;
+  }
+}
+
+/* For very small phones keep readable, stacked 2-columns -> 2 rows */
+@media (max-width: 420px) {
+  .stats { gap: 0.6rem !important; padding: 0.6rem !important; }
+  .stat-item h3 { font-size: 1.45rem !important; }
+  .stat-item p { font-size: 0.85rem !important; }
+}
+
+
+/* =====================================
+   PRODUCTS SECTION — MOBILE FIX
+   ===================================== */
+@media (max-width: 768px) {
+
+  /* Remove massive left padding */
+  #products-section {
+    padding: 3rem 1.2rem 3rem 1.2rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  /* Fix section title fonts */
+  #products-section .section-header,
+  .products-header {
+    font-size: 1.55rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    margin: 0 auto 1.5rem auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  #products-section p,
+  .section-intro {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    margin: 0 auto 1.5rem auto !important;
+    padding: 0 0.75rem !important;
+    text-align: center !important;
+  }
+
+  /* Center buttons and stack vertically */
+  #products-section .view-all-container {
+    padding: 0 !important;
+    margin: 3rem auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+
+  #products-section .btn-nav {
+    width: 90% !important;
+    max-width: 300px !important;
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+  .btn-nav.btn-primary{
+    left: 0rem;
+  }
+
+  /* Fix SVG/logo image spacing */
+  .svg-container,
+  .svg {
+    margin: 1.5rem auto 1rem auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .svg {
+    width: 70% !important;
+    max-width: 260px !important;
+    margin: 0 auto !important;
+  }
+
+  /* FIX CARDS WIDTH + REMOVE LEFT PADDING */
+  .products-cards-container {
+    padding: 0.5rem 1rem !important;
+    margin: 0 auto !important;
+    gap: 0.75rem !important;
+    justify-content: center !important;
+  }
+
+  .products-card {
+    flex: 0 0 48% !important;    /* 2 per row on mobile */
+    padding: 0.75rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .products-card img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .products-card h3 {
+    font-size: 0.95rem !important;
+  }
+
+  .products-card p {
+    font-size: 0.75rem !important;
+  }
+}
+  /* --------------------------------------------------------------------------------
+   FIX: View Products button pushed off-screen on mobile
+   Paste at the very end of styles.css
+   -------------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  /* Target the specific button and neutralize inline negative margin */
+  #products-section .view-all-container .btn-nav.btn-primary,
+  #products-section .view-all-container a.btn-nav.btn-primary {
+    margin-left: 0.5rem !important;        /* remove the -43rem */
+    margin-right: 0 !important;
+    display: inline-block !important;
+    width: 79% !important;            /* make it nicely full width on mobile */
+    max-width: 340px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    transform: none !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+
+  /* Ensure the view-all container places buttons centered */
+  #products-section .view-all-container {
+    margin: 1.25rem auto !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Extra defensive rule for very small phones */
+@media (max-width: 520px) {
+  #products-section .view-all-container .btn-nav.btn-primary {
+    width: 94% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* =====================================================
+   SOLUTIONS: surgical mobile fixes (scoped — won't touch hero)
+   Paste at end of styles.css
+   ===================================================== */
+@media (max-width: 420px) {
+
+  /* Ensure solutions wrapper doesn't allow horizontal overflow */
+  #solutions,
+  #solutions .container,
+  .solutions,
+  .solutions .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow-x: hidden !important;      /* contain any child overflow inside */
+  }
+
+  /* Force gallery to stack and never exceed width */
+  .solution-gallery {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .solution-card {
+    width: 100% !important;
+    min-width: 0 !important;            /* allow flex children to shrink */
+    box-sizing: border-box !important;
+    padding: 0.6rem !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  /* Make images & SVGs inside cards behave */
+  .solution-card img,
+  .solution-image img,
+  .solution-image,
+  .solution-card svg,
+  .solution-card picture {
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* Allow text boxes to wrap and not force width */
+  .solution-content,
+  .solution-content * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Defensive: ensure no child with fixed width forces overflow */
+  #solutions * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* If some children are flex items, make sure they can shrink */
+  #solutions .solution-card,
+  #solutions .solution-card > *,
+  #solutions .solution-gallery > * {
+    min-width: 0 !important;
+  }
+}
+
+}

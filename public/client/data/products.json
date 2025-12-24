@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "id": "product-1",
+      "title": "Advanced Security Solutions",
+      "category": "Security",
+      "image": "assets/Media/1-1.png",
+      "description": "Comprehensive security solutions to protect your business from modern threats.",
+      "features": [
+        "24/7 Monitoring",
+        "Real-time Alerts",
+        "Threat Detection",
+        "Automated Response"
+      ],
+      "specifications": {
+        "Type": "Cloud-based Security",
+        "Deployment": "SaaS",
+        "Integration": "API Available",
+        "Support": "24/7"
+      }
+    },
+    {
+      "id": "product-2",
+      "title": "Network Infrastructure",
+      "category": "Networking",
+      "image": "assets/Media/2-1.png",
+      "description": "Robust network infrastructure solutions for seamless connectivity.",
+      "features": [
+        "High-speed Connectivity",
+        "Scalable Architecture",
+        "Network Security",
+        "Cloud Integration"
+      ],
+      "specifications": {
+        "Type": "Network Hardware",
+        "Deployment": "On-premise/Cloud",
+        "Integration": "Multi-vendor",
+        "Support": "Business Hours"
+      }
+    }
+  ]
+}
