@@ -148,14 +148,13 @@ const products = [
         id: 2,
         title: "Communication Features",
         rows: [
-          { label: "GSM/GPRS", value: "NA" }, // TSGWET0001
+          {
+            label: "GSM/GPRS",
+            value:
+              "4G LTE/FDD (B1, B3, B5, B7, B8, B20)<br>LTE/TDD (B38 / B40/ B41)<br>WCDMA (B1 / B5 / B8)<br>2G GSM (900 / 1800 MHz)",
+          }, // TSGWET0001
           { label: "WIFI", value: "NA" }, // TSGWET0001
           { label: "GNSS Positioning", value: "NA" }, // TSGWET0001
-          { label: "GPS", value: "NA" }, // TSGWET0001
-          { label: "4G LTE/FDD", value: "B1, B3, B5, B7, B8, B20" }, // TSGWET0001
-          { label: "4G LTE/TDD", value: "B38, B40, B41" }, // TSGWET0001
-          { label: "WCDMA", value: "B1, B5, B8" }, // TSGWET0001
-          { label: "2G GSM", value: "900 / 1800 MHz" }, // TSGWET0001
         ],
       },
       {
@@ -379,21 +378,14 @@ const products = [
     heroBgImage: "assets/Desktop_1440 x 626 px_6CH_RTU.jpg",
     image: "assets/Media/device/products/4G_MODBUS_IO_RTU.jpg",
     communication: [
+      "rtu",
       "4g",
       "lte",
-      "lorawan",
-      "wifi",
-      "ble",
-      "zigbee",
       "modbus-rtu",
       "modbus-tcp",
       "mqtts",
       "https",
       "ftp",
-      "tcp",
-      "udp",
-      "dns",
-      "dhcp",
     ],
     power: ["12-24v-dc"],
     io: ["di-6", "ai-6", "relay-op-6", "rs485", "usb", "lcd-connector"],
@@ -533,21 +525,14 @@ const products = [
     heroBgImage: "assets/Desktop_1440 x 626 px_6CH_RTU.jpg",
     image: "assets/Media/device/products/4GMODBUS_RTU.jpg",
     communication: [
+      "rtu",
+      "modbus-rtu",
       "4g",
       "lte",
-      "lorawan",
-      "wifi",
-      "ble",
-      "zigbee",
-      "modbus-rtu",
       "modbus-tcp",
       "mqtts",
       "https",
-      "ftp",
-      "tcp",
-      "udp",
-      "dns",
-      "dhcp",
+      "ftp",  
     ],
     power: {
       supply: "12–24V DC with reverse polarity protection",
@@ -656,13 +641,10 @@ const products = [
     heroBgImage: "assets/Desktop_1440 x 626 px_V10_4G.jpg",
     image: "assets/Media/device/products/MINI_RTU.jpg",
     communication: [
+      "modbus-rtu",
       "4g",
       "lte",
-      "lorawan",
       "wifi",
-      "ble",
-      "zigbee",
-      "modbus-rtu",
       "modbus-tcp",
       "mqtts",
       "https",
@@ -947,79 +929,85 @@ const products = [
       "dns",
       "dhcp",
     ],
-technicalSpecs: [
-  {
-    id: 1,
-    title: "Power Supply Specifications",
-    rows: [
-      { label: "Supply Voltage", value: "12–24 V DC" },
-      { label: "Reverse Polarity Protection", value: "0–24 V DC" },
-      { label: "Max Operating Current", value: "< 100 mA" },
-      { label: "Peak Operating Current", value: "2 A @ network activities" }
-    ]
-  },
-  {
-    id: 2, 
-    title: "Communication Features",
-    rows: [
-      { label: "GSM/GPRS", value: "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), LTE-TDD (B38 / B40 / B41), WCDMA (B1 / B5 / B8), 2G GSM (900 / 1800 MHz)" },
-      { label: "WIFI", value: "NA" },
-      { label: "GNSS (Positioning)", value: "NA" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Interfaces / IO Capabilities", 
-    rows: [
-      { label: "RS-485", value: "0" },
-      { label: "Ethernet", value: "1" },
-      { label: "GNSS Antenna", value: "External (if required)" },
-      { label: "Cellular Antenna", value: "External" },
-      { label: "SIM Type", value: "Micro SIM" },
-      { label: "Flash Memory", value: "64 MB" },
-      { label: "RAM Memory", value: "512 KB" },
-      { label: "Real Time Clock", value: "External with battery backup" },
-      { label: "Watchdog", value: "External" },
-      { label: "LED Indication", value: "Available" },
-      { label: "Serial Port", value: "USB Mini" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Communication Protocol Support",
-    rows: [
-      { 
-        label: "Industrial Protocols", 
-        value: "Not Supported" 
+    technicalSpecs: [
+      {
+        id: 1,
+        title: "Power Supply Specifications",
+        rows: [
+          { label: "Supply Voltage", value: "12–24 V DC" },
+          { label: "Reverse Polarity Protection", value: "0–24 V DC" },
+          { label: "Max Operating Current", value: "< 100 mA" },
+          {
+            label: "Peak Operating Current",
+            value: "2 A @ network activities",
+          },
+        ],
       },
-      { 
-        label: "IP & Application Protocols", 
-        value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP" 
-      }
-    ]
+      {
+        id: 2,
+        title: "Communication Features",
+        rows: [
+          {
+            label: "GSM/GPRS",
+            value:
+              "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), <br> LTE-TDD (B38 / B40 / B41), <br> WCDMA (B1 / B5 / B8), <br> 2G GSM (900 / 1800 MHz)",
+          },
+          { label: "WIFI", value: "NA" },
+          { label: "GNSS (Positioning)", value: "NA" },
+        ],
+      },
+      {
+        id: 3,
+        title: "Interfaces / IO Capabilities",
+        rows: [
+          { label: "RS-485", value: "0" },
+          { label: "Ethernet", value: "1" },
+          { label: "GNSS Antenna", value: "External (if required)" },
+          { label: "Cellular Antenna", value: "External" },
+          { label: "SIM Type", value: "Micro SIM" },
+          { label: "Flash Memory", value: "64 MB" },
+          { label: "RAM Memory", value: "512 KB" },
+          { label: "Real Time Clock", value: "External with battery backup" },
+          { label: "Watchdog", value: "External" },
+          { label: "LED Indication", value: "Available" },
+          { label: "Serial Port", value: "USB Mini" },
+        ],
+      },
+      {
+        id: 4,
+        title: "Communication Protocol Support",
+        rows: [
+          {
+            label: "Industrial Protocols",
+            value: "Not Supported",
+          },
+          {
+            label: "IP & Application Protocols",
+            value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Physical Specifications",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "70 × 100 × 60 mm" },
+          { label: "Installation", value: "DIN Rail Mount" },
+        ],
+      },
+      {
+        id: 6,
+        title: "Operating Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−40 °C to +85 °C" },
+          { label: "Operating Humidity", value: "Up to 85% RH" },
+          { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
+          { label: "Enclosure Protection", value: "IP20 (Indoor)" },
+        ],
+      },
+    ],
   },
   {
-    id: 5,
-    title: "Physical Specifications",
-    rows: [
-      { label: "Dimensions (L × W × H)", value: "70 × 100 × 60 mm" },
-      { label: "Installation", value: "DIN Rail Mount" }
-    ]
-  },
-  {
-    id: 6,
-    title: "Operating Environment",
-    rows: [
-      { label: "Operating Temperature", value: "−40 °C to +85 °C" },
-      { label: "Operating Humidity", value: "Up to 85% RH" },
-      { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
-      { label: "Enclosure Protection", value: "IP20 (Indoor)" }
-    ]
-  }
-],
-    
-  },
-   {
     id: 9,
     category: "gateways",
     name: "Modbus RTU to TCP Gateway (TSGWMB0003)",
@@ -1041,77 +1029,84 @@ technicalSpecs: [
       "dns",
       "dhcp",
     ],
-technicalSpecs: [
-  {
-    id: 1,
-    title: "Power Supply Specifications",
-    rows: [
-      { label: "Supply Voltage", value: "12–24 V DC" },
-      { label: "Reverse Polarity Protection", value: "0–24 V DC" },
-      { label: "Max Operating Current", value: "< 100 mA" },
-      { label: "Peak Operating Current", value: "2 A @ network activities" }
-    ]
-  },
-  {
-    id: 2, 
-    title: "Communication Features",
-    rows: [
-      { label: "GSM/GPRS", value: "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), LTE-TDD (B38 / B40 / B41), WCDMA (B1 / B5 / B8), 2G GSM (900 / 1800 MHz)" },
-      { label: "WIFI", value: "NA" },
-      { label: "GNSS (Positioning)", value: "NA" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Interfaces / IO Capabilities", 
-    rows: [
-      { label: "RS-485", value: "1" },
-      { label: "Ethernet", value: "0" },
-      { label: "GNSS Antenna", value: "External (if required)" },
-      { label: "Cellular Antenna", value: "External" },
-      { label: "SIM Type", value: "Micro SIM" },
-      { label: "Flash Memory", value: "64 MB" },
-      { label: "RAM Memory", value: "512 KB" },
-      { label: "Real Time Clock", value: "External with battery backup" },
-      { label: "Watchdog", value: "External" },
-      { label: "LED Indication", value: "Available" },
-      { label: "Serial Port", value: "USB Mini" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Communication Protocol Support",
-    rows: [
-      { 
-        label: "Industrial Protocols", 
-        value: "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)" 
+    technicalSpecs: [
+      {
+        id: 1,
+        title: "Power Supply Specifications",
+        rows: [
+          { label: "Supply Voltage", value: "12–24 V DC" },
+          { label: "Reverse Polarity Protection", value: "0–24 V DC" },
+          { label: "Max Operating Current", value: "< 100 mA" },
+          {
+            label: "Peak Operating Current",
+            value: "2 A @ network activities",
+          },
+        ],
       },
-      { 
-        label: "IP & Application Protocols", 
-        value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP" 
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Physical Specifications",
-    rows: [
-      { label: "Dimensions (L × W × H)", value: "70 × 100 × 60 mm" },
-      { label: "Installation", value: "DIN Rail Mount" }
-    ]
-  },
-  {
-    id: 6,
-    title: "Operating Environment",
-    rows: [
-      { label: "Operating Temperature", value: "−40 °C to +85 °C" },
-      { label: "Operating Humidity", value: "Up to 85% RH" },
-      { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
-      { label: "Enclosure Protection", value: "IP20 (Indoor)" }
-    ]
-  }
-]
-,
+      {
+        id: 2,
+        title: "Communication Features",
+        rows: [
+          {
+            label: "GSM/GPRS",
+            value:
+              "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), <br> LTE-TDD (B38 / B40 / B41), <br> WCDMA (B1 / B5 / B8), <br>  2G GSM (900 / 1800 MHz)",
+          },
+          { label: "WIFI", value: "NA" },
+          { label: "GNSS (Positioning)", value: "NA" },
+        ],
+      },
+      {
+        id: 3,
+        title: "Interfaces / IO Capabilities",
+        rows: [
+          { label: "RS-485", value: "1" },
+          { label: "Ethernet", value: "0" },
+          { label: "GNSS Antenna", value: "External (if required)" },
+          { label: "Cellular Antenna", value: "External" },
+          { label: "SIM Type", value: "Micro SIM" },
+          { label: "Flash Memory", value: "64 MB" },
+          { label: "RAM Memory", value: "512 KB" },
+          { label: "Real Time Clock", value: "External with battery backup" },
+          { label: "Watchdog", value: "External" },
+          { label: "LED Indication", value: "Available" },
+          { label: "Serial Port", value: "USB Mini" },
+        ],
+      },
+      {
+        id: 4,
+        title: "Communication Protocol Support",
+        rows: [
+          {
+            label: "Industrial Protocols",
+            value:
+              "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)",
+          },
+          {
+            label: "IP & Application Protocols",
+            value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Physical Specifications",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "70 × 100 × 60 mm" },
+          { label: "Installation", value: "DIN Rail Mount" },
+        ],
+      },
+      {
+        id: 6,
+        title: "Operating Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−40 °C to +85 °C" },
+          { label: "Operating Humidity", value: "Up to 85% RH" },
+          { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
+          { label: "Enclosure Protection", value: "IP20 (Indoor)" },
+        ],
+      },
+    ],
     cloudFeatures: [
       "Device Management: Add/remove devices, geolocation, health status",
       "Live Data Monitoring: Centralized dashboard with real-time tracking",
@@ -1149,8 +1144,9 @@ technicalSpecs: [
     heroBgImage: "assets/Desktop_1440 x 626 px_MODBUS_LORAWAN_NODE.jpg",
     image: "assets/Media/device/products/MODBUS_LORAWAN_NODE.jpg",
     communication: [
-      "Modbus-Tcp",
-      "modbus-gateway",
+      "lora",
+      "lorawan",
+      "modbus-node",
       "modbus-tcp",
       "mqtts",
       "https",
@@ -1161,79 +1157,92 @@ technicalSpecs: [
       "dns",
       "dhcp",
     ],
-technicalSpecs: [
-  {
-    id: 1,
-    title: "Power Supply Specifications",
-    rows: [
-      { label: "Supply Voltage", value: "7.2 V DC" },
-      { label: "Reverse Polarity Protection", value: "7.2 V DC" },
-      { label: "Max Operating Current", value: "< 100 mA" },
-      { label: "Peak Operating Current", value: "2 A @ network activities" }
-    ]
-  },
-  {
-    id: 2, 
-    title: "Communication Features",
-    rows: [
-      { label: "GSM/GPRS", value: "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), LTE-TDD (B38 / B40 / B41), WCDMA (B1 / B5 / B8), 2G GSM (900 / 1800 MHz)" },
-      { label: "WIFI", value: "NA" },
-      { label: "Wireless Frequency Band & Communication", value: "Accuracy Rate: LoRaWAN ≥ 95%" },
-      { label: "LoRaWAN Band", value: "ISM Band 865–867 MHz" },
-      { label: "Radio Communication Distance", value: "Minimum 1 km radius" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Interfaces / IO Capabilities", 
-    rows: [
-      { label: "RS-485", value: "1" },
-      { label: "GNSS Antenna", value: "External (If required)" },
-      { label: "Cellular Antenna", value: "External" },
-      { label: "SIM Type", value: "Micro SIM" },
-      { label: "Flash Memory", value: "64 MB" },
-      { label: "RAM Memory", value: "512 KB" },
-      { label: "Real Time Clock", value: "External with battery backup" },
-      { label: "Watchdog", value: "External" },
-      { label: "LED Indication", value: "Available" },
-      { label: "Serial Port", value: "USB Mini" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Communication Protocol Support",
-    rows: [
-      { 
-        label: "Industrial Protocols", 
-        value: "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)" 
+    technicalSpecs: [
+      {
+        id: 1,
+        title: "Power Supply Specifications",
+        rows: [
+          { label: "Supply Voltage", value: "7.2 V DC" },
+          { label: "Reverse Polarity Protection", value: "7.2 V DC" },
+          { label: "Max Operating Current", value: "< 100 mA" },
+          {
+            label: "Peak Operating Current",
+            value: "2 A @ network activities",
+          },
+        ],
       },
-      { 
-        label: "IP & Application Protocols", 
-        value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP" 
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Physical Specifications",
-    rows: [
-      { label: "Dimensions (L × W × H)", value: "197 × 90 × 60 mm" },
-      { label: "Installation", value: "DIN Rail Mount" }
-    ]
-  },
-  {
-    id: 6,
-    title: "Operating Environment",
-    rows: [
-      { label: "Operating Temperature", value: "−40 °C to +85 °C" },
-      { label: "Operating Humidity", value: "Up to 85% RH" },
-      { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
-      { label: "Enclosure Protection", value: "IP20 (Indoor)" }
-    ]
-  }
-]
+      {
+        id: 2,
+        title: "Communication Features",
+        rows: [
+          {
+            label: "GSM/GPRS",
+            value:
+              "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), LTE-TDD (B38 / B40 / B41), WCDMA (B1 / B5 / B8), 2G GSM (900 / 1800 MHz)",
+          },
+          { label: "WIFI", value: "NA" },
+          {
+            label: "Wireless Frequency Band & Communication",
+            value: "Accuracy Rate: LoRaWAN ≥ 95%",
+          },
+          { label: "LoRaWAN Band", value: "ISM Band 865–867 MHz" },
+          {
+            label: "Radio Communication Distance",
+            value: "Minimum 1 km radius",
+          },
+        ],
+      },
+      {
+        id: 3,
+        title: "Interfaces / IO Capabilities",
+        rows: [
+          { label: "RS-485", value: "1" },
+          { label: "GNSS Antenna", value: "External (If required)" },
+          { label: "Cellular Antenna", value: "External" },
+          { label: "SIM Type", value: "Micro SIM" },
+          { label: "Flash Memory", value: "64 MB" },
+          { label: "RAM Memory", value: "512 KB" },
+          { label: "Real Time Clock", value: "External with battery backup" },
+          { label: "Watchdog", value: "External" },
+          { label: "LED Indication", value: "Available" },
+          { label: "Serial Port", value: "USB Mini" },
+        ],
+      },
+      {
+        id: 4,
+        title: "Communication Protocol Support",
+        rows: [
+          {
+            label: "Industrial Protocols",
+            value:
+              "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)",
+          },
+          {
+            label: "IP & Application Protocols",
+            value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Physical Specifications",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "197 × 90 × 60 mm" },
+          { label: "Installation", value: "DIN Rail Mount" },
+        ],
+      },
+      {
+        id: 6,
+        title: "Operating Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−40 °C to +85 °C" },
+          { label: "Operating Humidity", value: "Up to 85% RH" },
+          { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
+          { label: "Enclosure Protection", value: "IP20 (Indoor)" },
+        ],
+      },
+    ],
 
-,
     cloudFeatures: [
       "Device Management: Add/remove devices, geolocation, health status",
       "Live Data Monitoring: Centralized dashboard with real-time tracking",
@@ -1284,70 +1293,71 @@ technicalSpecs: [
       "dhcp",
     ],
     technicalSpecs: [
-  {
-    id: 1,
-    title: "Power Supply Specifications",
-    rows: [
-      { label: "Supply Voltage", value: "12–24 V DC" },
-      { label: "Reverse Polarity Protection", value: "0–24 V DC" },
-      { label: "Max Operating Current", value: "< 100 mA" },
-      { label: "Peak Operating Current", value: "2 A @ network activities" }
-    ]
-  },
-  {
-    id: 2, 
-    title: "Communication Features",
-    rows: [
-      { label: "GSM/GPRS", value: "NA" },
-      { label: "WIFI", value: "NA" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Interfaces / IO Capabilities", 
-    rows: [
-      { label: "Digital Input", value: "8" },
-      { label: "Analog Input", value: "8" },
-      { label: "RS-485", value: "1" },
-      { label: "Memory", value: "512kb" },
-      { label: "Real Time Clock", value: "External with battery backup" },
-      { label: "Watchdog", value: "External" },
-      { label: "LED Indication", value: "Available" },
-      { label: "Serial Port", value: "USB Mini" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Communication Protocol Support",
-    rows: [
-      { 
-        label: "Industrial Protocols", 
-        value: "Not Supported" 
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Physical Specifications",
-    rows: [
-      { label: "Dimensions (L × W × H)", value: "120 × 80 × 30 mm" },
-      { label: "Installation", value: "DIN Rail Mount" }
-    ]
-  },
-  {
-    id: 6,
-    title: "Operating Environment",
-    rows: [
-      { label: "Operating Temperature", value: "−10 °C to +70 °C" },
-      { label: "Operating Humidity", value: "Up to 85% RH" },
-      { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
-      { label: "Enclosure Protection", value: "IP65" }
-    ]
-  }
-]
+      {
+        id: 1,
+        title: "Power Supply Specifications",
+        rows: [
+          { label: "Supply Voltage", value: "12–24 V DC" },
+          { label: "Reverse Polarity Protection", value: "0–24 V DC" },
+          { label: "Max Operating Current", value: "< 100 mA" },
+          {
+            label: "Peak Operating Current",
+            value: "2 A @ network activities",
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Communication Features",
+        rows: [
+          { label: "GSM/GPRS", value: "NA" },
+          { label: "WIFI", value: "NA" },
+        ],
+      },
+      {
+        id: 3,
+        title: "Interfaces / IO Capabilities",
+        rows: [
+          { label: "Digital Input", value: "8" },
+          { label: "Analog Input", value: "8" },
+          { label: "RS-485", value: "1" },
+          { label: "Memory", value: "512kb" },
+          { label: "Real Time Clock", value: "External with battery backup" },
+          { label: "Watchdog", value: "External" },
+          { label: "LED Indication", value: "Available" },
+          { label: "Serial Port", value: "USB Mini" },
+        ],
+      },
+      {
+        id: 4,
+        title: "Communication Protocol Support",
+        rows: [
+          {
+            label: "Industrial Protocols",
+            value: "Not Supported",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Physical Specifications",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "120 × 80 × 30 mm" },
+          { label: "Installation", value: "DIN Rail Mount" },
+        ],
+      },
+      {
+        id: 6,
+        title: "Operating Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−10 °C to +70 °C" },
+          { label: "Operating Humidity", value: "Up to 85% RH" },
+          { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
+          { label: "Enclosure Protection", value: "IP65" },
+        ],
+      },
+    ],
 
-
-,
     cloudFeatures: [
       "Device Management: Add/remove devices, geolocation, health status",
       "Live Data Monitoring: Centralized dashboard with real-time tracking",
@@ -1382,7 +1392,8 @@ technicalSpecs: [
     description:
       "Single phase energy monitoring device with MODBUS RTU communication for power consumption tracking in industrial environments.",
     price: "N/A",
-    heroBgImage: "assets/Desktop_1440 x 626 px_SINGLE_PHASE_ENERGYMONITORING.jpg",
+    heroBgImage:
+      "assets/Desktop_1440 x 626 px_SINGLE_PHASE_ENERGYMONITORING.jpg",
     image: "assets/Media/device/products/SINGLE_PHASE_ENERGYMONITORING.jpg",
     communication: [
       "Modbus-Tcp",
@@ -1398,83 +1409,89 @@ technicalSpecs: [
       "dhcp",
     ],
     technicalSpecs: [
-  {
-    id: 1,
-    title: "Power Supply Specifications",
-    rows: [
-      { label: "Supply Voltage", value: "12–24 V DC" },
-      { label: "Reverse Polarity Protection", value: "0–24 V DC" },
-      { label: "Max Operating Current", value: "< 100 mA" },
-      { label: "Peak Operating Current", value: "2 A @ network activities" }
-    ]
-  },
-  {
-    id: 2, 
-    title: "Communication Features",
-    rows: [
-      { label: "GSM/GPRS", value: "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), LTE-TDD (B38 / B40 / B41), WCDMA (B1 / B5 / B8), 2G GSM (900 / 1800 MHz)" },
-      { label: "WIFI", value: "IEEE 802.11 Wireless Network" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Interfaces / IO Capabilities", 
-    rows: [
-      { label: "Digital Input", value: "0" },
-      { label: "Digital Output", value: "0" },
-      { label: "Analog Input", value: "0" },
-      { label: "Analog Output", value: "1" },
-      { label: "RS-485", value: "0" },
-      { label: "Counter Input", value: "0" },
-      { label: "Ethernet", value: "0" },
-      { label: "GNSS Antenna", value: "External" },
-      { label: "Cellular Antenna", value: "External" },
-      { label: "SIM Type", value: "Micro SIM" },
-      { label: "Flash Memory", value: "64 MB" },
-      { label: "RAM Memory", value: "512 KB" },
-      { label: "Real Time Clock", value: "External with battery backup" },
-      { label: "Watchdog", value: "External" },
-      { label: "LED Indication", value: "Available" },
-      { label: "Serial Port", value: "USB Mini" },
-      { label: "Display", value: "Not Available" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Communication Protocol Support",
-    rows: [
-      { 
-        label: "Industrial Protocols", 
-        value: "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)" 
+      {
+        id: 1,
+        title: "Power Supply Specifications",
+        rows: [
+          { label: "Supply Voltage", value: "12–24 V DC" },
+          { label: "Reverse Polarity Protection", value: "0–24 V DC" },
+          { label: "Max Operating Current", value: "< 100 mA" },
+          {
+            label: "Peak Operating Current",
+            value: "2 A @ network activities",
+          },
+        ],
       },
-      { 
-        label: "IP & Application Protocols", 
-        value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP" 
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: "Physical Specifications",
-    rows: [
-      { label: "Dimensions (L × W × H)", value: "70 × 100 × 60 mm" },
-      { label: "Installation", value: "DIN Rail Mount" }
-    ]
-  },
-  {
-    id: 6,
-    title: "Operating Environment",
-    rows: [
-      { label: "Operating Temperature", value: "−40 °C to +85 °C" },
-      { label: "Operating Humidity", value: "Up to 85% RH" },
-      { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
-      { label: "Enclosure Protection", value: "IP65" }
-    ]
-  }
-]
+      {
+        id: 2,
+        title: "Communication Features",
+        rows: [
+          {
+            label: "GSM/GPRS",
+            value:
+              "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), LTE-TDD (B38 / B40 / B41), WCDMA (B1 / B5 / B8), 2G GSM (900 / 1800 MHz)",
+          },
+          { label: "WIFI", value: "IEEE 802.11 Wireless Network" },
+        ],
+      },
+      {
+        id: 3,
+        title: "Interfaces / IO Capabilities",
+        rows: [
+          { label: "Digital Input", value: "0" },
+          { label: "Digital Output", value: "0" },
+          { label: "Analog Input", value: "0" },
+          { label: "Analog Output", value: "1" },
+          { label: "RS-485", value: "0" },
+          { label: "Counter Input", value: "0" },
+          { label: "Ethernet", value: "0" },
+          { label: "GNSS Antenna", value: "External" },
+          { label: "Cellular Antenna", value: "External" },
+          { label: "SIM Type", value: "Micro SIM" },
+          { label: "Flash Memory", value: "64 MB" },
+          { label: "RAM Memory", value: "512 KB" },
+          { label: "Real Time Clock", value: "External with battery backup" },
+          { label: "Watchdog", value: "External" },
+          { label: "LED Indication", value: "Available" },
+          { label: "Serial Port", value: "USB Mini" },
+          { label: "Display", value: "Not Available" },
+        ],
+      },
+      {
+        id: 4,
+        title: "Communication Protocol Support",
+        rows: [
+          {
+            label: "Industrial Protocols",
+            value:
+              "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)",
+          },
+          {
+            label: "IP & Application Protocols",
+            value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Physical Specifications",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "70 × 100 × 60 mm" },
+          { label: "Installation", value: "DIN Rail Mount" },
+        ],
+      },
+      {
+        id: 6,
+        title: "Operating Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−40 °C to +85 °C" },
+          { label: "Operating Humidity", value: "Up to 85% RH" },
+          { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
+          { label: "Enclosure Protection", value: "IP65" },
+        ],
+      },
+    ],
 
-
-,
     cloudFeatures: [
       "Device Management: Add/remove devices, geolocation, health status",
       "Live Data Monitoring: Centralized dashboard with real-time tracking",
@@ -1502,8 +1519,8 @@ technicalSpecs: [
       "Cloud platform integration",
     ],
   },
-    {
-       id: 13,
+  {
+    id: 13,
     category: "controllers",
     name: "WEATHER STATION RTU (TSRTU0005)",
     description:
@@ -1524,85 +1541,90 @@ technicalSpecs: [
       "dns",
       "dhcp",
     ],
-       technicalSpecs: [
-  {
-    id: 1,
-    title: "Power Supply Specifications",
-    rows: [
-      { label: "Supply Voltage", value: "12–24 V DC" },
-      { label: "Reverse Polarity Protection", value: "0–24 V DC" },
-      { label: "Max Operating Current", value: "< 100 mA" },
-      { label: "Peak Operating Current", value: "2 A @ network activities" }
-    ]
-  },
-  {
-    id: 2, 
-    title: "Communication Features",
-    rows: [
-      { label: "GSM/GPRS", value: "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), LTE-TDD (B38 / B40 / B41), WCDMA (B1 / B5 / B8), 2G GSM (900 / 1800 MHz)" },
-      { label: "WIFI", value: "NA" }
-    ]
-  },
-  {
-    id: 3,
-    title: "Interfaces / IO Capabilities", 
-    rows: [
-      { label: "Digital Input", value: "3" },
-      { label: "Digital Output", value: "0" },
-      { label: "Analog Input", value: "6" },
-      { label: "Analog Output", value: "0" },
-      { label: "RS-485", value: "1" },
-      { label: "Counter Input", value: "0" },
-      { label: "Ethernet", value: "0" },
-      { label: "GNSS Antenna", value: "External" },
-      { label: "Cellular Antenna", value: "External" },
-      { label: "SIM Type", value: "Micro SIM" },
-      { label: "Flash Memory", value: "64 MB" },
-      { label: "RAM Memory", value: "512 KB" },
-      { label: "Real Time Clock", value: "External with battery backup" },
-      { label: "Watchdog", value: "External" },
-      { label: "LED Indication", value: "Available" },
-      { label: "Serial Port", value: "USB Mini" },
-      { label: "Display", value: "16X2 LCD" }
-    ]
-  },
-  {
-    id: 4,
-    title: "Communication Protocol Support",
-    rows: [
-      { 
-        label: "Industrial Protocols", 
-        value: "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)" 
+    technicalSpecs: [
+      {
+        id: 1,
+        title: "Power Supply Specifications",
+        rows: [
+          { label: "Supply Voltage", value: "12–24 V DC" },
+          { label: "Reverse Polarity Protection", value: "0–24 V DC" },
+          { label: "Max Operating Current", value: "< 100 mA" },
+          {
+            label: "Peak Operating Current",
+            value: "2 A @ network activities",
+          },
+        ],
       },
-      { 
-        label: "IP & Application Protocols", 
-        value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP" 
-      }
-    ]
+      {
+        id: 2,
+        title: "Communication Features",
+        rows: [
+          {
+            label: "GSM/GPRS",
+            value:
+              "4G LTE-FDD (B1 / B3 / B5 / B7 / B8 / B20), LTE-TDD (B38 / B40 / B41), WCDMA (B1 / B5 / B8), 2G GSM (900 / 1800 MHz)",
+          },
+          { label: "WIFI", value: "NA" },
+        ],
+      },
+      {
+        id: 3,
+        title: "Interfaces / IO Capabilities",
+        rows: [
+          { label: "Digital Input", value: "3" },
+          { label: "Digital Output", value: "0" },
+          { label: "Analog Input", value: "6" },
+          { label: "Analog Output", value: "0" },
+          { label: "RS-485", value: "1" },
+          { label: "Counter Input", value: "0" },
+          { label: "Ethernet", value: "0" },
+          { label: "GNSS Antenna", value: "External" },
+          { label: "Cellular Antenna", value: "External" },
+          { label: "SIM Type", value: "Micro SIM" },
+          { label: "Flash Memory", value: "64 MB" },
+          { label: "RAM Memory", value: "512 KB" },
+          { label: "Real Time Clock", value: "External with battery backup" },
+          { label: "Watchdog", value: "External" },
+          { label: "LED Indication", value: "Available" },
+          { label: "Serial Port", value: "USB Mini" },
+          { label: "Display", value: "16X2 LCD" },
+        ],
+      },
+      {
+        id: 4,
+        title: "Communication Protocol Support",
+        rows: [
+          {
+            label: "Industrial Protocols",
+            value:
+              "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)",
+          },
+          {
+            label: "IP & Application Protocols",
+            value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP",
+          },
+        ],
+      },
+      {
+        id: 5,
+        title: "Physical Specifications",
+        rows: [
+          { label: "Dimensions (L × W × H)", value: "130 × 100 × 60 mm" },
+          { label: "Installation", value: "DIN Rail Mount" },
+        ],
+      },
+      {
+        id: 6,
+        title: "Operating Environment",
+        rows: [
+          { label: "Operating Temperature", value: "−40 °C to +85 °C" },
+          { label: "Operating Humidity", value: "Up to 85% RH" },
+          { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
+          { label: "Enclosure Protection", value: "IP20 (Indoor)" },
+        ],
+      },
+    ],
   },
-  {
-    id: 5,
-    title: "Physical Specifications",
-    rows: [
-      { label: "Dimensions (L × W × H)", value: "130 × 100 × 60 mm" },
-      { label: "Installation", value: "DIN Rail Mount" }
-    ]
-  },
-  {
-    id: 6,
-    title: "Operating Environment",
-    rows: [
-      { label: "Operating Temperature", value: "−40 °C to +85 °C" },
-      { label: "Operating Humidity", value: "Up to 85% RH" },
-      { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
-      { label: "Enclosure Protection", value: "IP20 (Indoor)" }
-    ]
-  }
-]
-
-
-    } 
-  
 ];
 // SVG Icons for different product categories
 const categoryIcons = {
@@ -1697,44 +1719,44 @@ function setupEventListeners() {
   });
 }
 // Mobile filter toggle
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileFilterBtn = document.getElementById('mobileFilterBtn');
-  const sidebar = document.querySelector('.sidebar');
-  const closeSidebar = document.querySelector('.close-sidebar');
-  const overlay = document.querySelector('.overlay') || createOverlay();
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileFilterBtn = document.getElementById("mobileFilterBtn");
+  const sidebar = document.querySelector(".sidebar");
+  const closeSidebar = document.querySelector(".close-sidebar");
+  const overlay = document.querySelector(".overlay") || createOverlay();
 
   function createOverlay() {
-    const overlay = document.createElement('div');
-    overlay.className = 'overlay';
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
     document.body.appendChild(overlay);
     return overlay;
   }
 
   if (mobileFilterBtn) {
-    mobileFilterBtn.addEventListener('click', function() {
-      sidebar.classList.add('active');
-      overlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+    mobileFilterBtn.addEventListener("click", function () {
+      sidebar.classList.add("active");
+      overlay.classList.add("active");
+      document.body.style.overflow = "hidden"; // Prevent scrolling when sidebar is open
     });
   }
 
   if (closeSidebar) {
-    closeSidebar.addEventListener('click', closeFilter);
+    closeSidebar.addEventListener("click", closeFilter);
   }
 
   if (overlay) {
-    overlay.addEventListener('click', closeFilter);
+    overlay.addEventListener("click", closeFilter);
   }
 
   function closeFilter() {
-    sidebar.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = ''; // Re-enable scrolling
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.style.overflow = ""; // Re-enable scrolling
   }
 
   // Close on escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
       closeFilter();
     }
   });
@@ -1818,23 +1840,23 @@ function renderProducts() {
 }
 
 // Mobile filter toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileFilterBtn = document.getElementById('mobileFilterBtn');
-  const sidebar = document.getElementById('sidebarFilters');
-  const closeSidebar = document.getElementById('closeSidebar');
-  const sidebarOverlay = document.getElementById('sidebarOverlay');
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileFilterBtn = document.getElementById("mobileFilterBtn");
+  const sidebar = document.getElementById("sidebarFilters");
+  const closeSidebar = document.getElementById("closeSidebar");
+  const sidebarOverlay = document.getElementById("sidebarOverlay");
   const body = document.body;
 
   // Toggle sidebar
   function toggleSidebar() {
-    sidebar.classList.toggle('active');
-    sidebarOverlay.classList.toggle('active');
-    body.classList.toggle('sidebar-open');
+    sidebar.classList.toggle("active");
+    sidebarOverlay.classList.toggle("active");
+    body.classList.toggle("sidebar-open");
   }
 
   // Open sidebar
   if (mobileFilterBtn) {
-    mobileFilterBtn.addEventListener('click', function(e) {
+    mobileFilterBtn.addEventListener("click", function (e) {
       e.preventDefault();
       toggleSidebar();
     });
@@ -1842,7 +1864,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Close sidebar
   if (closeSidebar) {
-    closeSidebar.addEventListener('click', function(e) {
+    closeSidebar.addEventListener("click", function (e) {
       e.preventDefault();
       toggleSidebar();
     });
@@ -1850,14 +1872,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Close when clicking on overlay
   if (sidebarOverlay) {
-    sidebarOverlay.addEventListener('click', function() {
+    sidebarOverlay.addEventListener("click", function () {
       toggleSidebar();
     });
   }
 
   // Close with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && sidebar.classList.contains("active")) {
       toggleSidebar();
     }
   });

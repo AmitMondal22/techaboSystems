@@ -155,7 +155,7 @@ body {
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
-            margin-left: 0px;
+            margin-left: 0px !important;
             width: 40rem;
         }
         .hero-title h1{
@@ -168,6 +168,7 @@ body {
             opacity: 0.95;
             line-height: 1.6;
             width: 50%;
+            margin-left: 0px !important;
         }
 
         .hero-certifications {
@@ -213,6 +214,7 @@ body {
 
         .hero-buttons {
             margin-top: 20px;
+             margin-left: 0rem !important;
         }
 
         .btn-primary {
@@ -233,7 +235,7 @@ body {
         .btn-hero{
             color: white;
             background-color: #0066ff;
-            padding: 14px 25px;
+            padding: 14px 15px;
             border: none;
             border-radius: 1px;
             font-size: 12px;
@@ -249,8 +251,8 @@ body {
             color: #0066ff !important;
             background-color: #ffffff !important;
             transition: all 0.3s ease;
-            width: 10rem;
-            padding: 14px 5px;
+            width: 180px;
+            padding: 14px 15px;
         }
 
         .btn-secondary {
@@ -278,11 +280,14 @@ body {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
+            margin-left: 0.5rem;
             gap: 40px;
+            padding-top: 12px;
+            padding-bottom: 12px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none; /* Firefox */
-            padding-bottom: 10px;
+            padding-bottom: 14px;
         }
 
         .tabs-container::-webkit-scrollbar {
@@ -290,7 +295,7 @@ body {
         }
 
         .tab {
-            padding: 12px 0;
+            padding: 1px 0;
             cursor: pointer;
             font-size: 14px;
             position: relative;
@@ -314,11 +319,19 @@ body {
             bottom: -1px;
             left: 0;
             width: 100%;
-            height: 3px;
+            height: 1px;
             background: #0066ff;
             border-radius: 3px 3px 0 0;
         }
-
+        /* Add this to your media query for desktop view */
+@media (min-width: 1024px) {
+    .tabs-container {
+        justify-content: center; /* Center the tabs */
+        padding-left: 0; /* Remove the left padding */
+        margin-left: 8rem; /* Remove the left margin */
+        padding-right: 0; /* Ensure consistent padding */
+    }
+}
         /* Overview Section */
         .overview-section {
             max-width: 1200px;
@@ -584,10 +597,27 @@ body {
         }
 
         @media (max-width: 768px) {
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                max-width: 300px;
+                margin: 20px auto 0;
+            }
+            
+            .hero-buttons .btn-hero {
+                width: 70%;
+                text-align: center;
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            
             /* Make body 10px wider on mobile */
             body {
                 padding: 0px 0px;
-                width: 32rem;
+                width: 100%;
+                max-width: 425px;
                 margin: 0 auto;
             }
             
@@ -601,13 +631,14 @@ body {
             .hero-content {
                 flex-direction: column;
                 padding: 0 1px;
-                width: 120%;
+                width: 140% !important;
             }
             
             .hero-left {
                 width: 90%;
                 text-align: left;
                 padding: 0 1px;
+               top: 8rem !important;
                 
             }
             
@@ -615,6 +646,7 @@ body {
                 font-size: 12px;
                 letter-spacing: 1px;
                 margin-bottom: 8px;
+                margin-left: 8.2px;
                 justify-content: left;
             }
             
@@ -626,31 +658,51 @@ body {
             }
             
             .hero-description {
-                font-size: 14px;
+                font-size: 12px !important;
                 line-height: 1.5;
                 margin: 0 0 40px;
             }
             
+         
             .hero-features {
-            
-                margin: 15px 0;
+                top: -60px;
+                margin: 15px 7px;
             }
             
+            #download{
+            color: #0066ff !important;
+            background-color: #ffffff !important;
+            transition: all 0.3s ease;
+            width: 300px;
+            padding: 14px 15px;
+        }
+            
             .feature-tag {
-                font-size: 12px;
-                padding: 4px 10px;
+                font-size: 8px !important;
+                padding: 3px 8px !important;
+                margin: 2px !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+                max-width: 100% !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                height: 12px !important;
+                line-height: 1 !important;
             }
             
             .hero-buttons {
                 flex-direction: column;
                 gap: 12px;
                 margin-top: 20px;
+                top: -3rem;
+               
             }
             
             .btn-hero {
                 width: 100%;
-                max-width: 280px;
-                margin: 0 auto;
+                max-width: 210px;
+                margin: 0 0px;
                 padding: 12px 20px;
             }
             
@@ -1061,16 +1113,19 @@ body {
         /* Responsive styles */
         @media (max-width: 768px) {
             .specs-container {
-                padding: 0 15px;
-                gap: 12px;
+                padding: 0 11px;
+                gap: 22px !important;
+                
             }
             
             .spec-header {
-                padding: 15px;
+                padding: 12px;
+                width: 21rem;
+                font-size: 11px;
             }
             
             .spec-label {
-                font-size: 14px;
+                font-size: 16px !important
             }
             
             .spec-content p {
@@ -1500,6 +1555,11 @@ body {
             margin-bottom: 10px;
             font-weight: 600;
         }
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 7px;
+            font-weight: 600;
+        }
 
         .architecture-subtitle {
             font-size: 18px;
@@ -1526,6 +1586,7 @@ body {
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            margin-top: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -1631,7 +1692,8 @@ body {
 
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 28px;
+                font-size: 24px !important;
+                margin-left: 0rem !important;
             }
 
             .features-grid {

@@ -14,34 +14,63 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'products.html';
     }
 
-    // Tab navigation functionality
-    const tabs = document.querySelectorAll('.tab');
+  // Tab navigation functionality
+const tabs = document.querySelectorAll('.tab');
+
+function setActiveTab(tabId) {
+    // Remove active class from all tabs and sections
+    tabs.forEach(tab => tab.classList.remove('active'));
     
-    function setActiveTab(tabId) {
-        // Remove active class from all tabs and sections
-        tabs.forEach(tab => tab.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(section => {
-            section.classList.remove('active');
-        });
+    // Hide all sections
+    document.querySelectorAll('[data-section]').forEach(section => {
+        section.classList.remove('active');
+    });
 
-        // Add active class to selected tab and corresponding section
-        const activeTab = document.querySelector(`.tab[data-tab="${tabId}"]`);
-        const activeSection = document.getElementById(tabId);
-        
-        if (activeTab) activeTab.classList.add('active');
-        if (activeSection) activeSection.classList.add('active');
-
-        // Update URL hash
-        window.location.hash = tabId;
+    // Add active class to selected tab and corresponding section
+    const activeTab = document.querySelector(`.tab[data-tab="${tabId}"]`);
+    const activeSection = document.querySelector(`[data-section="${tabId}"]`);
+    
+    if (activeTab) activeTab.classList.add('active');
+    if (activeSection) {
+        activeSection.classList.add('active');
+        // Smooth scroll to the section
+        setTimeout(() => {
+            activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
     }
 
-    // Add click event listeners to tabs
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const tabId = tab.getAttribute('data-tab');
-            setActiveTab(tabId);
-        });
+    // Update URL hash
+    window.location.hash = tabId;
+}
+
+// Add click event listeners to tabs
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const tabId = tab.getAttribute('data-tab');
+        setActiveTab(tabId);
     });
+});
+
+// Check URL hash on page load
+function checkHash() {
+    const hash = window.location.hash.substring(1);
+    if (hash && document.querySelector(`[data-section="${hash}"]`)) {
+        setActiveTab(hash);
+    } else {
+        // Default to first tab if no valid hash
+        const firstTab = document.querySelector('.tab');
+        if (firstTab) {
+            const firstTabId = firstTab.getAttribute('data-tab');
+            setActiveTab(firstTabId);
+        }
+    }
+}
+
+// Handle back/forward navigation
+window.addEventListener('popstate', checkHash);
+
+// Initial check
+document.addEventListener('DOMContentLoaded', checkHash);
 
     // Check URL hash on page load
     function checkHash() {

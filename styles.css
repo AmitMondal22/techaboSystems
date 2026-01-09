@@ -1383,7 +1383,7 @@ background: linear-gradient(135deg, #0b5ed7 0%, #0ea5e9 100%);
       top: 70px;
       right: 20px;
       padding: 1rem 2rem;
-      border-radius: 8px;
+      border-radius: 0px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
   
@@ -1428,7 +1428,7 @@ section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: 700;
-    color: #111;
+    color: #ffffff;
   }
   
   section p {
@@ -2401,8 +2401,8 @@ html, body { overflow-x: hidden !important; }
 .hero + .industry-leaders,
 .hero + .products,
 .hero + .services {
-  margin-top: 0.75rem !important;
-  padding-top: 1rem !important;
+  margin-top: 0rem !important;
+  padding-top: 0rem !important;
 }
 
 /* 7) Force all sections to participate in layout flow (no accidental absolute) */
@@ -2659,8 +2659,8 @@ main section, main > div, footer, header {
   }
 
   .hero-buttons a {
-    width: 100% !important;          /* full-width button */
-    max-width: none !important;
+    width: 100%;
+    max-width: none
   }
 
 
