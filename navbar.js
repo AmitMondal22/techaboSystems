@@ -5,13 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
   overlay.className = 'overlay';
   document.body.appendChild(overlay);
   
- 
-  
-  // Insert after the menu toggle button
-  if (menuToggle && menuToggle.parentNode) {
-    menuToggle.parentNode.insertBefore(desktopToggle, menuToggle.nextSibling);
-  }
-
   // Toggle mobile menu
   function toggleMenu() {
     const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -22,14 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Close menu when clicking on overlay
-  overlay.addEventListener('click', () => {
-    if (navLinks.classList.contains('active')) {
-      toggleMenu();
-    }
-  });
+  overlay.addEventListener('click', toggleMenu);
 
   // Toggle menu on button click
-  menuToggle.addEventListener('click', toggleMenu);
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleMenu();
+    });
+  }
 
   // Close menu when clicking on a nav link
   document.querySelectorAll('.nav-link').forEach(link => {
@@ -40,21 +34,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
- // Update active link based on current page
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-link').forEach(link => {
+  // Update active link based on current page
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link').forEach(link => {
     const linkHref = link.getAttribute('href');
     
     // Remove any existing active classes first
     link.classList.remove('active', 'nav-link-active');
     
-    // Check for exact match or if we're on a product details page
-    const isProductDetails = currentPage === 'product-details.html' && linkHref === 'products.html';
-    const isIndexPage = (currentPage === '' || currentPage === 'index.html') && linkHref === 'index.html';
-    const isCurrentPage = linkHref === currentPage;
-    const isHashMatch = linkHref === `#${window.location.hash}`;
-    
-    if (isCurrentPage || isProductDetails || isIndexPage || isHashMatch) {
+    // Add active class to current page link
+    if (linkHref === currentPage) {
+      link.classList.add('active', 'nav-link-active');
         link.classList.add('active');
     }
 });

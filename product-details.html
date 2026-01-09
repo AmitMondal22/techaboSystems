@@ -35,14 +35,14 @@
   <link rel="icon" type="image/png" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="navbar.css">
-  
+    <link rel="stylesheet" href="product-details.css">
   <!-- Canonical URL -->
   <link rel="canonical" href="https://techavosolutions.com/" />
   
   <title>Techavo Solutions | IoT & Embedded Systems Development</title>
  
 
-  <link rel="stylesheet" href="product-details.css">
+
   
   <!-- Schema.org markup for Google -->
   <script type="application/ld+json">
@@ -61,6 +61,7 @@
   </script>
 </head>
 <body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <!-- Skip to main content -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <!-- Navigation -->
@@ -98,15 +99,12 @@
                 <div class="hero-category">Loading...</div>
                 <h1 class="hero-title">Loading Product...</h1>
                 <p class="hero-description">Loading product description...</p>
-                <div class="hero-certifications">
-                   <div class="cert-badge"> <img src="assets/Certifications/ISO.svg" alt=""></div>
-                   <div class="cert-badge"> <img src="assets/Certifications/CE.svg" alt=""></div>
-                </div>
+               
                 <div class="hero-features">
                     <div class="feature-tag">Loading...</div>
                 </div>
                 <div class="hero-buttons">
-                    <button class="btn-hero">Request a Demo</button>
+                    <a href="contact.html?subject=demo" class="btn-hero">Request a Demo</a>
                     <button class="btn-hero" id="download">View Brochure</button>
                 </div>
             </div>
@@ -126,7 +124,7 @@
     </section>
 
     <!-- Overview Section -->
-    <section class="overview-section">
+    <section class="overview-section" data-section="overview">
         <div class="overview-container">
             <div class="overview">Overview</div>
             <div class="overview-text">
@@ -136,7 +134,7 @@
     </section>
 
     <!-- Key Features Section -->
-    <section class="key-features">
+    <section class="key-features" data-section="features">
         <h2>Special Features</h2>
         <p class="key-features-subtitle">Smart edge IoT gateway; can connect up to 100+ IOT (20x less cost than competitive IoT gw) ; Rich API (REST + MQTT) for robust integration</p>
         
@@ -146,7 +144,7 @@
                     <div class="flip-card-front">
                          
                         <div class="feature-icon" id="security-arch-icon">
-                            <img src="assets/Features /Advanced Security Architecture.png" alt="Advanced Security Architecture">
+                            <img src="assets/Features/Advanced Security Architecture.png" alt="Advanced Security Architecture">
                         </div>
                         <div class="feature-title">Advanced Security Architecture</div>
                        
@@ -164,7 +162,7 @@
                     <div class="flip-card-front">
                      
                         <div class="feature-icon" id="ota-update-icon">
-                            <img src="assets/Features /Over-The-Air (OTA) Update.png" alt="OTA Update">
+                            <img src="assets/Features/Over-The-Air (OTA) Update.png" alt="OTA Update">
                         </div>
                            <div class="feature-title">Over-The-Air (OTA) Updates</div>
                         
@@ -182,7 +180,7 @@
                     <div class="flip-card-front">
                         
                         <div class="feature-icon" id="remote-config-icon">
-                            <img src="assets/Features /Remote Configuration.png" alt="Remote Configuration">
+                            <img src="assets/Features/Remote Configuration.png" alt="Remote Configuration">
                         </div>
                           <div class="feature-title">Remote Configuration</div>
                     </div>
@@ -199,7 +197,7 @@
                     <div class="flip-card-front">
                       
                         <div class="feature-icon" id="encryption-icon">
-                            <img src="assets/Features /strong data encryption.png" alt="Data Encryption">
+                            <img src="assets/Features/strong data encryption.png" alt="Data Encryption">
                         </div>
                           <div class="feature-title">Strong Data Encryption</div>
                     </div>
@@ -216,7 +214,7 @@
                     <div class="flip-card-front">
                         
                         <div class="feature-icon" id="desktop-config-icon">
-                            <img src="assets/Features /desktop configuration application.png" alt="Desktop Configuration">
+                            <img src="assets/Features/desktop configuration application.png" alt="Desktop Configuration">
                         </div>
                           <div class="feature-title">Desktop Configuration Application</div>
                        
@@ -234,7 +232,7 @@
                     <div class="flip-card-front">
                     
                         <div class="feature-icon" id="multiprotocol-icon">
-                            <img src="assets/Features /multi-protocol support.png" alt="Multi-Protocol Support">
+                            <img src="assets/Features/multi-protocol support.png" alt="Multi-Protocol Support">
                         </div>
                             <div class="feature-title">Multi-Protocol Support</div>
                     </div>
@@ -250,7 +248,7 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                           <div class="feature-icon" id="cloud-integration-icon">
-                            <img src="assets/Features /cloud-ready system integration.png" alt="Cloud System Integration">
+                            <img src="assets/Features/cloud-ready system integration.png" alt="Cloud System Integration">
                         </div>
 
                         <div class="feature-title">Cloud Ready System Integration</div>
@@ -269,7 +267,7 @@
                     <div class="flip-card-front">
                       
                         <div class="feature-icon" id="edge-computing-icon">
-                            <img src="assets/Features /edge computing.jpg" alt="Edge Computing">
+                            <img src="assets/Features/edge computing.jpg" alt="Edge Computing">
                         </div>
                           <div class="feature-title">Edge Computing</div>
                     </div>
@@ -285,7 +283,7 @@
         </div>
     </section>
 
-<section class="safety-features-section">
+<section class="safety-features-section" >
     <div class="container">
         <div class="safety-header">
             <h2>Safety Features</h2>
@@ -382,7 +380,7 @@
     </section>
 
     <!-- Specifications Section -->
-    <section class="specifications">
+    <section class="specifications" data-section="specs">
         <h2>Specifications</h2>
         <div class="specs-container">
             <div class="specs-column">
@@ -509,7 +507,7 @@
     </section>
 
     <!-- Use Cases Section -->
-  <section class="use-cases-section">
+  <section class="use-cases-section" data-section="scenarios">
     <div class="container">
         <div class="use-cases-header">
             <h2>Solutions</h2>
@@ -596,7 +594,7 @@
    
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta" data-section="quote">
         <h2>Get started with your IoT journey with</h2>
         <p class="cta-subtitle">TechSave smart edge appliance</p>
         <p class="cta-subtitle">Ready to enhance today</p>

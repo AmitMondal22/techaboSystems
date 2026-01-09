@@ -42,3 +42,75 @@ const observer = new IntersectionObserver(entries => {
 });
 
 elements.forEach(el => observer.observe(el));
+
+// ---------- Product Details Tabs Navigation ----------
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.tab');
+  const tabContainer = document.querySelector('.tabs-container');
+  
+  if (!tabs.length || !tabContainer) return;
+
+  // Function to update active tab
+  function updateActiveTab() {
+    const scrollPosition = window.scrollY + 150; // Adding offset for better UX
+    
+    // Get all sections that correspond to tabs
+    const sections = Array.from(tabs).map(tab => {
+      const targetId = tab.getAttribute('data-tab');
+      const section = document.querySelector(`section[data-section="${targetId}"]`);
+      return { tab, section };
+    }).filter(item => item.section);
+
+    // Find the current active section
+    let currentSection = null;
+    for (const { section } of sections) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      
+      if (scrollPosition >= sectionTop - 200 && scrollPosition < sectionTop + sectionHeight - 100) {
+        currentSection = section;
+        break;
+      }
+    }
+
+    // Update active tab
+    if (currentSection) {
+      const activeTabId = currentSection.getAttribute('data-section');
+      tabs.forEach(tab => {
+        if (tab.getAttribute('data-tab') === activeTabId) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  // Add click event to tabs
+  tabContainer.addEventListener('click', function(e) {
+    const tab = e.target.closest('.tab');
+    if (!tab) return;
+    
+    e.preventDefault();
+    const targetId = tab.getAttribute('data-tab');
+    const targetSection = document.querySelector(`section[data-section="${targetId}"]`);
+    
+    if (targetSection) {
+      // Update active tab
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      // Smooth scroll to section
+      window.scrollTo({
+        top: targetSection.offsetTop - 80, // Adjust for header height
+        behavior: 'smooth'
+      });
+    }
+  });
+  
+  // Update active tab on scroll
+  window.addEventListener('scroll', updateActiveTab);
+  
+  // Initial update
+  updateActiveTab();
+});

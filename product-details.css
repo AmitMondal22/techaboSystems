@@ -233,9 +233,9 @@ body {
         .btn-hero{
             color: white;
             background-color: #0066ff;
-            padding: 14px 5px;
+            padding: 14px 25px;
             border: none;
-            border-radius: 5px;
+            border-radius: 1px;
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
@@ -270,25 +270,33 @@ body {
         .tabs {
             background: white;
             border-bottom: 1px solid #e0e0e0;
-            padding: 0 40px;
+            padding: 0 20px;
+            position: relative;
         }
 
         .tabs-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
             gap: 40px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            padding-bottom: 10px;
+        }
+
+        .tabs-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
         }
 
         .tab {
-            padding: 20px 0;
+            padding: 12px 0;
             cursor: pointer;
-            font-size: 15px;
-            color: #888;
+            font-size: 14px;
             position: relative;
-            font-weight: 500;
+            white-space: nowrap;
             transition: all 0.2s ease;
+            flex-shrink: 0;
         }
 
         .tab:hover {
@@ -552,9 +560,11 @@ body {
 
         /* System Architecture Section */
         .system-architecture {
-            max-width: 1200px;
+            max-width: calc(1200px + 20px);
             margin: 60px auto;
-            padding: 0 20px;
+            padding: 0 10px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .system-architecture h2 {
@@ -567,9 +577,133 @@ body {
 
         .architecture-content {
             display: flex;
+            flex-wrap: wrap;
             gap: 25px;
             margin-top: 30px;
-            align-items: center;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            /* Make body 10px wider on mobile */
+            body {
+                padding: 0px 0px;
+                width: 32rem;
+                margin: 0 auto;
+            }
+            
+            /* Hero Section Mobile Styles */
+            .hero {
+                padding: 40px 20px;
+                min-height: auto;
+                text-align: center;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                padding: 0 1px;
+                width: 120%;
+            }
+            
+            .hero-left {
+                width: 90%;
+                text-align: left;
+                padding: 0 1px;
+                
+            }
+            
+            .hero-category {
+                font-size: 12px;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+                justify-content: left;
+            }
+            
+            .hero-title {
+                font-size: 18px;
+                line-height: 1.3;
+                width: 30rem;
+                margin: 10px 0 15px;
+            }
+            
+            .hero-description {
+                font-size: 14px;
+                line-height: 1.5;
+                margin: 0 0 40px;
+            }
+            
+            .hero-features {
+            
+                margin: 15px 0;
+            }
+            
+            .feature-tag {
+                font-size: 12px;
+                padding: 4px 10px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 20px;
+            }
+            
+            .btn-hero {
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
+                padding: 12px 20px;
+            }
+            
+            /* Hero Image Mobile Styles */
+            .hero-image-container {
+                padding: 10px 0;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+            
+            .hero-image {
+                max-width: 100%;
+                height: auto;
+                border-radius: 6px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .hero-image:hover {
+                transform: none; /* Disable hover effect on mobile */
+            }
+            
+            .architecture-content {
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                margin: 0 -10px;
+                padding: 0 10px;
+            }
+            
+            .architecture-left,
+            .architecture-right {
+                width: 100%;
+                flex: 1 1 100%;
+                padding: 10px 10px;
+            }
+            .architecture-left{
+                padding: 0 30px;
+            }
+            
+            .architecture-diagram {
+                max-width: 100%;
+                width: 100%;
+                overflow: hidden;
+                margin: 0 -1px;
+                padding: 0 20px;
+            }
+            
+            .architecture-diagram img {
+                width: 90%;
+                height: auto;
+                display: block;
+                max-width: 100%;
+            }
         }
 
         .architecture-left {
@@ -627,12 +761,15 @@ body {
         .architecture-right {
             flex: 1;
             position: relative;
+            min-width: 0; /* Allows the image to shrink below its default minimum width */
         }
 
         .architecture-diagram {
             background: #ffffff;
             border-radius: 8px;
             padding: 3px;
+            max-width: 100%;
+            box-sizing: border-box;
             display: flex;
             width: 50rem;
             align-items: center;
@@ -682,17 +819,18 @@ body {
             width: 90%;
             margin: 0 auto;
             padding: 0 20px 40px;
+            box-sizing: border-box; /* Include padding in width calculation */
         }
 
         .spec-item {
-            width: 80vw;
+            width: 100%;
+            max-width: 100%;
             background: white;
-          
             overflow: hidden;
             transition: all 0.3s ease;
             margin: 0 0 1px 0;
             color: #000;
-            
+            box-sizing: border-box;
         }
         
         .spec-item.active {
@@ -788,20 +926,22 @@ body {
 
 .spec-content table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     margin: 0;
     padding: 0;
     border: none;
+    table-layout: fixed;
 }
 
 .spec-content thead th {
-    background-color: #f8fafc;
-    color: #4b5563;
+    background-color: #f1f5f9; /* Slightly darker header background */
+    color: #1f2937; /* Darker text for better contrast */
     font-weight: 600;
     text-align: left;
     padding: 16px 25px;
-    border-bottom: 2px solid #e5e7eb;
+    border: 1px solid #9ca3af; /* Darker border for header */
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -809,31 +949,32 @@ body {
 
 .spec-content td {
     padding: 16px 25px;
-    border-bottom: 1px solid #e5e7eb;
+    border: 1px solid #d1d5db; /* Slightly darker border */
     color: #4b5563;
     width: 50%;
     font-size: 14px;
     line-height: 1.4;
+    vertical-align: middle;
     word-wrap: break-word;
-    vertical-align: top;
-    margin: 0;
-    border-collapse: collapse;
+    height: 100%;
+    display: table-cell;
+    border-collapse: collapse; /* Ensure borders collapse properly */
 }
 
 .spec-content tr {
-    border-bottom: 1px solid #e5e7eb;
+    /* Remove bottom border as we're handling borders on cells */
 }
 
-.spec-content tr:last-child {
-    border-bottom: none;
-}
+/* Remove this rule as we're handling borders at cell level */
 
 .spec-content {
     padding: 0 20px 20px;
     margin-bottom: 15px;
     width: 100%;
+    max-width: 100%;
     -webkit-overflow-scrolling: touch;
-    overflow: visible;
+    overflow-x: auto;
+    box-sizing: border-box;
 }
 
         .spec-content tbody tr:hover {
@@ -851,22 +992,26 @@ body {
             font-size: 15px;
             font-weight: 550;
             color: #2d2d2d;
-            padding: 26px 25px;
+            padding: 16px 25px;
             margin: 0;
             width: 100%;
             min-width: 250px;
             line-height: 1.4;
-            margin-top: 0rem;
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
         }
 
         .spec-content .spec-value {
             font-size: 14px;
             line-height: 1.4;
             color: #333;
-           
             padding: 16px 25px;
             margin: 0;
             background-color: #ffffff;
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
         }
         
         /* Add alternating row colors to both columns */
@@ -880,19 +1025,23 @@ body {
             background-color: #ffffff;  /* White */
         }
         
-        /* Remove bottom border from last row to prevent double border */
+        /* Ensure table rows and cells maintain proper height */
+        .spec-content tr {
+            display: table-row;
+        }
+        
+        .spec-content tbody {
+            display: table-row-group;
+        }
+        
+        /* Ensure all cells have consistent borders */
         .spec-content tr:last-child .spec-value {
-            border-bottom: none;
+            border-bottom: 1px solid #d1d5db; /* Same border as other cells */
         }
 
-        /* Add subtle border between rows */
-        /* Removed bottom border from all rows for cleaner look */
+        /* Borders are now handled at the cell level for better control */
         
-        /* Add more prominent border for the header */
-        .spec-content thead th {
-            border-bottom: 2px solid #e0e0e0;
-            background-color: #f5f5f5;
-        }
+        /* Header styles are now defined above */
 
         /* Active state for open items */
         .spec-item.active .spec-icon {
@@ -906,7 +1055,7 @@ body {
         
         .spec-item.active .spec-content {
             display: block;
-            padding: 3px 0;
+            padding: 0;
         }
 
         /* Responsive styles */
@@ -1221,7 +1370,7 @@ body {
 
 @media (max-width: 640px) {
     .safety-features-grid {
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
     .safety-feature-item {
@@ -1236,6 +1385,8 @@ body {
 
     .safety-feature-title {
         font-size: 0.75rem;
+        margin-top: 2px;
+        margin-bottom: 5px;
     }
 }
 
@@ -1480,7 +1631,7 @@ body {
 
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 32px;
+                font-size: 28px;
             }
 
             .features-grid {
@@ -1831,5 +1982,10 @@ body {
     
     .brochure-success-message {
         padding: 48px 24px;
+    }
+}
+@media (max-width: 768px) {
+    .logo{
+        margin-left: 1px;
     }
 }

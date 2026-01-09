@@ -20,6 +20,39 @@
     margin: auto;
   }
 
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img img {
+    height: 40px; /* Adjust based on your logo's aspect ratio */
+    width: auto;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    display: none; /* Hidden by default on desktop */
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    z-index: 1002;
+    position: relative;
+    width: 40px; /* Ensure consistent width */
+    height: 40px; /* Ensure consistent height */
+  }
+
   
   h1, h2, h3, h4 {
     font-weight: 700;
@@ -90,6 +123,107 @@
     }
   }
 
+  @media (max-width: 991px) {
+    .menu-toggle {
+      display: flex !important; /* Force show on mobile and tablet */
+      align-items: center;
+      background: #f8f9fa; /* Add background for better visibility */
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      width: 40px;
+      height: 40px;
+      position: relative;
+      margin-left: auto; /* Push to the right */
+    }
+    }
+    
+    /* Hide regular nav links on mobile */
+    .nav-links {
+      display: none !important;
+    }
+    
+    /* Show nav links when menu is active */
+    .nav-links.active {
+      display: flex !important;
+      flex-direction: column;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    
+    .menu-toggle span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 5rem 2rem 2rem;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease;
+      z-index: 1001;
+      gap: 1.5rem;
+      align-items: flex-start;
+      overflow-y: auto;
+    }
+    
+    .nav-links.active {
+      right: 0;
+    }
+    
+    .nav-links ul {
+      flex-direction: column;
+      width: 100%;
+      gap: 1rem;
+    }
+    
+    .nav-buttons {
+      flex-direction: column;
+      width: 100%;
+      margin: 1rem 0 0;
+      gap: 1rem;
+    }
+    
+    .nav-buttons .btn-nav {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+    
+    .nav-links a {
+      width: 100%;
+      padding: 0.75rem 0;
+    }
+    
+    .nav-links > ul > li {
+      width: 100%;
+    }
+    
+    .nav-links > ul > li > a::after {
+      display: none;
+    }
+  
+  
   @media (max-width: 768px) {
     .news-flash-container {
       margin-top: 60px; /* Adjust for mobile header */
@@ -128,13 +262,18 @@
     z-index: 1000;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
   }
   
   .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
     height: 100%;
     max-width: 1200px;
     margin: 0 3rem 0 auto;
@@ -152,8 +291,16 @@
     gap: 3rem;
     justify-content: center;
     align-items: center;
-    font-size: 0.5rem;
+  }
 
+  @media (max-width: 991px) {
+    .nav-links {
+      display: none;
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
   }
   
   /* Nav Buttons Container */
@@ -169,6 +316,82 @@
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    z-index: 1002;
+    padding: 0.5rem;
+    position: relative;
+    width: 30px;
+    height: 24px;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  
+  .menu-toggle span:nth-child(1) {
+    top: 0px;
+  }
+  
+  .menu-toggle span:nth-child(2),
+  .menu-toggle span:nth-child(3) {
+    top: 2px;
+  }
+  
+  .menu-toggle span:nth-child(4) {
+    top: 20px;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: #333;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
+  /* Overlay for mobile menu */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px);
+  }
+
+  .overlay.active {
+    display: block;
+    opacity: 1;
   }
   
   /* Button Base Styles */
