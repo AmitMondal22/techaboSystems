@@ -45,6 +45,13 @@ body {
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
   margin-bottom: 3.5rem;
 }
+@media(max-width:500px){
+  .solutions-nav{
+    top:0px;
+    margin-bottom: 10px
+  }
+}
+
 
 .solutions-menu {
   display: flex;
@@ -93,6 +100,16 @@ body {
   height: fit-content;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--grey-medium);
+}
+
+/* Mobile Sidebar Toggle Button - Hidden by default, only shown on mobile */
+.sidebar-toggle {
+  display: none;
+}
+
+/* Mobile Sidebar Overlay - Hidden by default, only shown on mobile */
+.sidebar-overlay {
+  display: none;
 }
 
 .filter-section {
@@ -379,6 +396,7 @@ body {
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -547,6 +565,79 @@ body {
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
+
+  }
+
+  /* Show toggle button on mobile */
+  .sidebar-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--grey-medium);
+    border-radius: 8px;
+    color: var(--prussian-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 3rem;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .sidebar-toggle:hover {
+    background: var(--grey-light);
+    border-color: var(--prussian-blue);
+    transform: translateY(-1px);
+  }
+
+  .sidebar-toggle svg {
+    transition: transform var(--transition-fast);
+  }
+
+  .sidebar-toggle[aria-expanded="true"] svg {
+    transform: rotate(45deg);
+  }
+
+  /* Show overlay on mobile */
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  }
+
+  .sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hide sidebar by default on mobile */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    z-index: 1000;
+    border-radius: 0;
+    transition: left var(--transition-fast);
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Show sidebar when active */
+  .sidebar.active {
+    left: 0;
+    z-index: 2000;
   }
 
   .solutions-grid {

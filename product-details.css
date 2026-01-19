@@ -24,7 +24,7 @@ body {
             padding: 80px 20px;
             position: relative;
             overflow: hidden;
-            min-height: 70vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             margin-top: 2rem;
@@ -335,26 +335,27 @@ body {
         /* Overview Section */
         .overview-section {
             max-width: 1200px;
-            margin: 80px auto;
+            margin: 10px auto;
             padding: 0 40px;
         }
 
         .overview-container {
-            display: flex;
             gap: 40px;
             width: 100%;
             align-items: flex-start;
-            background: #f9fafb;
+            /* background: #f9fafba6; */
             border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
         }
 
         .overview {
-            flex: 0 0 150px;
-            font-size: 24px;
-            font-weight: 600;
-            color: #000000;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
+            color: #1f67d2;
             position: relative;
             padding-left: 2px;
         }
@@ -363,7 +364,9 @@ body {
 
         .overview-text {
             flex: 1;
+            justify-content: center;
             font-size: 16px;
+            text-align: justify;
             line-height: 1.8;
             color: #4b5563;
             margin: 0;
@@ -397,9 +400,9 @@ body {
         }
 
         .key-features h2 {
-            font-size: 36px;
+            font-size: 28px;
             margin-bottom: 15px;
-            color: #1a1a1a;
+            color: #1f67d2;
             text-align: center;
         }
 
@@ -581,11 +584,10 @@ body {
         }
 
         .system-architecture h2 {
-            font-size: 36px;
+            font-size: 28px;
             margin-bottom: 18px;
-            color: #1a1a1a;
+            color: #1f67d2;
             text-align: center;
-
         }
 
         .architecture-content {
@@ -665,8 +667,8 @@ body {
             
          
             .hero-features {
-                top: -60px;
-                margin: 15px 7px;
+                top: -30px;
+                margin: 15px 0px;
             }
             
             #download{
@@ -695,8 +697,7 @@ body {
                 flex-direction: column;
                 gap: 12px;
                 margin-top: 20px;
-                top: -3rem;
-               
+                top: -2rem;
             }
             
             .btn-hero {
@@ -844,16 +845,16 @@ body {
         /* Specifications Section */
         .specifications {
             max-width: 100%;
-            margin: 80px auto;
+            margin: 0px auto;
             padding: 50px 20px;
             background-color: #ffffff;
         }
 
         .specifications h2 {
             text-align: center;
-            font-size: 36px;
+            font-size: 28px;
             margin-bottom: 50px;
-            color: #333;
+            color: #1f67d2;
         }
 
         .spec-content tr {
@@ -880,7 +881,7 @@ body {
             background: white;
             overflow: hidden;
             transition: all 0.3s ease;
-            margin: 0 0 1px 0;
+            margin: 0 0 px 0;
             color: #000;
             box-sizing: border-box;
         }
@@ -897,7 +898,7 @@ body {
         .spec-header {
             display: flex;
             align-items: center;
-            padding: 18px 25px;
+            padding: 17px 9px;
             color: #2c3e50 !important;
             cursor: pointer;
             font-weight: 600;
@@ -1021,7 +1022,7 @@ body {
 
 .spec-content {
     padding: 0 20px 20px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     width: 100%;
     max-width: 100%;
     -webkit-overflow-scrolling: touch;
@@ -1044,7 +1045,7 @@ body {
             font-size: 15px;
             font-weight: 550;
             color: #2d2d2d;
-            padding: 16px 25px;
+            padding: 12px 9px;
             margin: 0;
             width: 100%;
             min-width: 250px;
@@ -1058,7 +1059,7 @@ body {
             font-size: 14px;
             line-height: 1.4;
             color: #333;
-            padding: 16px 25px;
+            padding: 12px 9px;
             margin: 0;
             background-color: #ffffff;
             display: table-cell;
@@ -1151,7 +1152,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
     width: 20px;
     height: 20px;
@@ -1188,9 +1189,9 @@ body {
 }
 
 .use-cases-header h2 {
-    font-size: 2.5rem;
+    font-size: 28px;
     font-weight: 700;
-    color: #353535;
+    color: #1f67d2;
     letter-spacing: -0.5px;
     margin: 0;
     line-height: 1.2;
@@ -1337,9 +1338,9 @@ body {
 }
 
 .safety-header h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #1e3a8a;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f67d2;
     letter-spacing: -0.5px;
     margin: 0;
 }
@@ -2050,4 +2051,31 @@ body {
     .logo{
         margin-left: 1px;
     }
+}
+/* Add underline to specification headers */
+.spec-header {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.spec-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #464646; /* Light gray underline */
+    transition: background-color 0.3s ease;
+}
+
+.spec-header:hover::after {
+    background-color: #464646; /* Slightly darker on hover */
+}
+
+/* Style for the active (open) state */
+.spec-item.active .spec-header::after {
+    background-color: #3b82f6; /* Blue underline for active state */
 }

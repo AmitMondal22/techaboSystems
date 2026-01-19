@@ -128,7 +128,7 @@
         <div class="overview-container">
             <div class="overview">Overview</div>
             <div class="overview-text">
-                <p>TSGT W100 is a WiFi IoT gateway that can interconnect WiFi, Modbus RS485, Modbus TCP, IO and provides APIs (REST API + MQTT) cloud services. It can be applied to the new energy vehicle system of Internet of Things + battery + vehicle, BMS, smart charging pile, industrial automation, smart home, intelligent building, smart agriculture, energy management and other fields. Built-in 4G Modem.</p>
+                <p>Loading ...</p>
             </div>
         </div>
     </section>
@@ -136,8 +136,6 @@
     <!-- Key Features Section -->
     <section class="key-features" data-section="features">
         <h2>Special Features</h2>
-        <p class="key-features-subtitle">Smart edge IoT gateway; can connect up to 100+ IOT (20x less cost than competitive IoT gw) ; Rich API (REST + MQTT) for robust integration</p>
-        
         <div class="features-grid">
             <div class="feature-card">
                 <div class="flip-card-inner">
@@ -956,7 +954,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Trigger download after 1.5 seconds
                 setTimeout(() => {
-                    triggerDownload(BROCHURE_PATH, email);
+                    triggerDownload(
+                        window.currentProduct?.brochurePath, 
+                        email
+                    );
                     
                     // Close modal after another 2 seconds
                     setTimeout(() => {
@@ -972,7 +973,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 successMessage.style.display = 'block';
                 
                 setTimeout(() => {
-                    triggerDownload(BROCHURE_PATH, email);
+                    triggerDownload(
+                        window.currentProduct?.brochurePath, 
+                        email
+                    );
                     setTimeout(() => {
                         closeModal();
                         resetForm();
@@ -1012,15 +1016,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to trigger file download
     function triggerDownload(filePath, email) {
+        // Use the provided filePath, or get from currentProduct, or use default
+        const brochurePath = filePath || 
+                           (window.currentProduct && window.currentProduct.brochurePath) || 
+                           'assets/brochures/default_brochure.pdf';
+        
+        // Create a temporary link element
         const link = document.createElement('a');
-        link.href = filePath;
-        link.download = 'Techavo-Product-Brochure.pdf';
+        link.href = brochurePath;
+        
+        // Set the download attribute with a proper filename
+        const productName = window.currentProduct ? 
+                          window.currentProduct.name.replace(/\s+/g, '_') : 
+                          'Product';
+        link.download = `Techavo_${productName}_Brochure.pdf`;
+        
+        // Make the link invisible and add to the document
         link.style.display = 'none';
         document.body.appendChild(link);
+        
+        // Trigger the download
         link.click();
+        
+        // Clean up
         document.body.removeChild(link);
         
-        console.log('Download triggered for: ' + email);
+        console.log('Downloading brochure from:', brochurePath);
     }
 
     // Reset form to initial state

@@ -3,19 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solution Details | Techavo Systems</title>
-
-  <!-- Fonts -->
+  <meta name="description" content="Techavo Solutions - Leading IoT and embedded systems development company providing cutting-edge hardware and software solutions for businesses worldwide.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Techavo Solutions">
+  <meta name="keywords" content="IoT solutions, embedded systems, hardware development, firmware development, industrial automation, smart technology">
+  <meta http-equiv="content-language" content="en">
+  <meta name="geo.region" content="IN">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">  
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="navbar.css">
+<!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techavosolutions.com/">
+  <meta property="og:title" content="Techavo Solutions | IoT & Embedded Systems Development">
+  <meta property="og:description" content="Leading IoT and embedded systems development company providing cutting-edge hardware and software solutions for businesses worldwide.">
+  <meta property="og:image" content="https://techavosolutions.com/assets/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://techavosolutions.com/">
+  <meta property="twitter:title" content="Techavo Solutions | IoT & Embedded Systems Development">
+  <meta property="twitter:description" content="Leading IoT and embedded systems development company providing cutting-edge hardware and software solutions for businesses worldwide.">
+  <meta property="twitter:image" content="https://techavosolutions.com/assets/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://techavosolutions.com/" />
+  
+  <title>Techavo Solutions | IoT & Embedded Systems Development</title>
+   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="seo-styles.css">
   <link rel="stylesheet" href="solution-details.css">
+
+  
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Techavo Solutions",
+    "url": "https://techavosolutions.com",
+    "logo": "https://techavosolutions.com/logo.png",
+    "description": "Leading IoT and embedded systems development company",
+    "sameAs": [
+      "https://www.linkedin.com/company/techavo-solutions",
+      "https://twitter.com/techavosolutions"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- NAVBAR (same as your other pages) -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Navigation -->
   <header class="navbar" role="banner">
     <div class="container nav-container">
       <a href="/" class="logo" aria-label="Techavo Solutions Home">
@@ -42,7 +91,6 @@
       </nav>
     </div>
   </header>
-
   <!-- HERO -->
   <section class="hero" id="hero-section">
     <div class="container hero-inner">
@@ -211,7 +259,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Products</a></li>
-          <li><a href="#">Solutions</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
           <li><a href="projects.html">Case Studies</a></li>
           <li><a href="#">Resources</a></li>
           <li><a href="blogs.html">Blogs</a></li>
@@ -405,5 +453,24 @@ if (!hasDiagram && !hasArchitectureList) {
       renderSolution(solution);
     });
   </script>
+   <script src="js/solutions-listing.js"></script>
+    <script>
+      // Force set solutions link as active on this page
+      document.addEventListener('DOMContentLoaded', function() {
+        // Remove all    classes first
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+        });
+        
+        // Add active class to solutions link
+        const solutionsLink = document.querySelector('a[href="solutions.html"]');
+        if (solutionsLink) {
+          solutionsLink.classList.add('active');
+        }
+      });
+    </script>
+<script src="navbar.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

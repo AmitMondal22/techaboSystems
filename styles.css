@@ -18,8 +18,8 @@
   
   .container {
     width: 90%;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 1270px;
+    margin: 90px;
   }
 
   
@@ -219,13 +219,21 @@
   .nav-links a:hover {
     color: #0d6efd;
   }
+@media(max-width:500px){
+  .nav-links a.active{
+    background: #0d6efd !important;
+    color: white !important;
+    border-radius: 1px !important
+    
+  }
+}
   
   /* Add underline effect only to navigation links (not buttons) */
   .nav-links > ul > li > a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
+    height: 0px;
     bottom: 0;
     left: 0;
     background-color: #0d6efd;
@@ -370,11 +378,10 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    height: 51vh;
+    height: 45vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
   }
   .hero-bg-image {
     width: 95%;
@@ -1829,9 +1836,10 @@ section {
 .section-header h2 {
   font-size: 2.5rem;
   color: #ffffff;
-  margin-bottom: 15px;
+  margin-bottom: 1px;
   line-height: 3rem;
   font-weight: 500;
+  padding-top: 0px;
 }
 
 .section-header p {
@@ -2346,6 +2354,7 @@ html, body { overflow-x: hidden !important; }
   z-index: 5 !important;       /* slight elevation so hero content remains visible */
   transform: none !important;  /* remove accidental translate */
   margin-top: 0 !important;
+  padding-bottom: 4rem;
 }
 
 /* 2) Reset common offenders that pull content up over the hero */
@@ -2488,7 +2497,7 @@ main section, main > div, footer, header {
   .nav-links a.nav-link {
     padding: .75rem 0.5rem !important;
     display:block !important;
-    color: #1f2937 !important;
+    color: #1f2937 ;
     font-weight: 600 !important;
     border-radius: 8px;
   }
@@ -2635,9 +2644,9 @@ main section, main > div, footer, header {
   /* Ensure text aligns nicely in the center */
   .hero h1,
   .hero p {
-    width: 95% !important;       
+    width: 95%;
     padding-bottom: 2rem !important;    /* small breathing room */
-    margin-left: auto !important;
+    margin-left: 0 !important;
     margin-right: auto !important;
   }
   .hero h1 {
@@ -2646,7 +2655,7 @@ main section, main > div, footer, header {
   }
   .hero p{
     margin-top: -2rem !important;
-    height: 8rem;
+    height: 4.5rem;
   }
   /* Stretch the buttons too */
   .hero-buttons {

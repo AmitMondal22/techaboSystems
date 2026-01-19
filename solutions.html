@@ -76,7 +76,7 @@
  <ul>
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="#" class="nav-link">Solutions</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
           <li><a href="projects.html" class="nav-link">Case Studies</a></li>
           <li><a href="#" class="nav-link">Resources</a></li>
           <li><a href="blogs.html" class="nav-link">Blogs</a></li>
@@ -104,6 +104,19 @@
 </div>
 
 <div class="container main-container">
+  <!-- Mobile Sidebar Toggle Button -->
+  <button class="sidebar-toggle" aria-label="Toggle filters" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+    <span>Filters</span>
+  </button>
+  
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay"></div>
+  
   <!-- Sidebar Filters -->
   <aside class="sidebar">
     <div class="filter-section">
@@ -177,10 +190,7 @@
 
     
 
-        <div class="filter-section">
-      <!-- Industry Applications (unchanged) -->
-      ...
-    </div>
+        
 
     <!-- Sidebar CTA -->
     <div class="sidebar-cta">
@@ -206,16 +216,7 @@
           Ready-to-deploy, field-tested solutions across energy, monitoring, safety, and infrastructure. Filter by category and industry to discover what fits your sites.
         </p>
       </div>
-      <div class="sort-options">
-        <label for="sort">Filter by category:</label>
-        <select id="sort" class="sort-select">
-          <option value="all">All Solutions</option>
-          <option value="energy">Energy Management</option>
-          <option value="monitoring">Monitoring</option>
-          <option value="safety">Safety &amp; Security</option>
-          <option value="infrastructure">Infrastructure</option>
-        </select>
-      </div>
+      
     </div>
 
     <div class="solutions-grid">
@@ -544,5 +545,20 @@
     <script src="navbar.js"></script>
     <script src="script.js"></script>
     <script src="js/solutions-listing.js"></script>
+    <script>
+      // Force set solutions link as active on this page
+      document.addEventListener('DOMContentLoaded', function() {
+        // Remove all active classes first
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+        });
+        
+        // Add active class to solutions link
+        const solutionsLink = document.querySelector('a[href="solutions.html"]');
+        if (solutionsLink) {
+          solutionsLink.classList.add('active');
+        }
+      });
+    </script>
 </body>
 </html>

@@ -8,6 +8,8 @@ const products = [
     description:
       "Industrial IoT gateway connecting Modbus RTU/ASCII devices to WiFi networks with cloud integration and secure communication.",
     price: "N/A",
+   overview: "This device is a compact and reliable IoT gateway/controller built around the ESP32, offering  An onboard Real-Time Clock (RTC) ensures accurate timekeeping for data logging, event tracking, and time-based control operations. For non-volatile storage, the device incorporates both Flash memory and EEPROM, allowing secure retention of configuration parameters, calibration data, logs, and system settings even during power interruptions.high-performance wireless connectivity through its integrated Wi-Fi interface. It supports Modbus RTU (RS485), enabling seamless integration with energy meters, sensors, and a wide range of industrial equipment. The gateway is suitable for remote monitoring, data transmission, and cloud connectivity in industrial and IoT applications where reliable communication is critical.",
+    brochurePath: "assets/brochures/Techavo_Brochure_WiFi_Modbus_Gateway.pdf",
     heroBg: "transparent",
     heroBgImage: "assets/IMG_0569.JPG",
     image: "assets/Media/device/products/WIFIMODBUSGATEWAY.jpg",
@@ -100,7 +102,9 @@ const products = [
   {
     id: 2,
     category: "gateways",
-    name: "4G ETH GATEWAY (TSGTW 1002)",
+    name: "4G ETH GATEWAY (TSGTW1002)",
+    brochurePath:"assets/brochures/4G Ethernet Gateway white.pdf",
+    overview: "4G ETH GATEWAY (TSGTW1002) is a compact and reliable industrial IoT gateway designed to provide robust and flexible connectivity. The device supports 4G LTE cellular communication as well as Ethernet, ensuring dependable network access in both wired and wireless environments. An onboard Real-Time Clock (RTC) ensures accurate timekeeping for data logging, event tracking, and time-based operations. For non-volatile storage, the gateway integrates Flash memory and EEPROM, enabling secure storage of configuration parameters, device settings, and logs even during power interruptions. The gateway is suitable for remote monitoring, data transmission, and cloud connectivity in industrial and IoT applications where reliable communication is critical.",
     description:
       "4G IoT gateway for industrial applications with MODBUS support and secure cloud connectivity.",
     price: "N/A",
@@ -232,7 +236,9 @@ const products = [
   {
     id: 3,
     category: "sensors",
+    overview: "LORAWAN Sensor Node (TSNODE0001) is an ultra-low-power wireless sensor node designed for long-range and battery-operated IoT applications. The device supports both LoRaWAN and Wi-Fi connectivity, providing flexible communication options for different deployment scenarios.It includes provisions for analog input measurement, allowing easy interfacing with a wide range of sensors. Additionally, the node features electrically isolated pulse interrupt inputs, ensuring reliable and noise-immune pulse counting and event detection from external devices such as flow meters and switches.Designed for high energy efficiency and extended battery life, the node is well suited for remote sensing, data acquisition, and monitoring applications in industrial, utility, and environmental IoT systems",
     name: "LORAWAN Sensor Node (TSNODE0001)",
+    brochurePath:"assets/brochures/LORAWAN SENSOR NODE.pdf",
     description:
       "Long-range LoRaWAN sensor node for industrial IoT applications with ultra-low power consumption and secure data transmission.",
     price: "N/A",
@@ -372,11 +378,13 @@ const products = [
     id: 4,
     category: "controllers",
     name: "4G MODBUS IO RTU (TSRTU6660)",
+    overview: "4G MODBUS IO RTU (TSRTU6660) is an industrial-grade remote I/O RTU designed for reliable field data acquisition and control. The device features 4G LTE cellular connectivity for remote monitoring and communication over wide-area networks. It provides 6 Analog Inputs (AI) supporting 4–20 mA current signals, suitable for industrial sensors and transmitters. The unit also includes 6 Digital Inputs (DI) and 6 Digital Outputs (DO). The digital outputs are relay-type, supporting both dry contact and wet contact operation for flexible control of external loads. The RTU supports electrically isolated Modbus RTU communication, ensuring robust, noise-immune data exchange in harsh industrial environments. Designed for dependable operation, the device is ideal for remote I/O expansion, automation, and telemetry applications in industrial and utility systems.",
+    brochurePath: "assets/brochures/TSRTU6660.pdf",
     description:
       "Versatile industrial RTU with 4G, LoRa, WiFi, BLE, and Zigbee support for comprehensive IoT connectivity.",
     price: "N/A",
     heroBgImage: "assets/Desktop_1440 x 626 px_6CH_RTU.jpg",
-    image: "assets/Media/device/products/4G_MODBUS_IO_RTU.jpg",
+    image: "assets/Media/device/products/Desktop_1440 x 626 px_6CH_RTU.jpg",
     communication: [
       "rtu",
       "4g",
@@ -518,11 +526,13 @@ const products = [
   {
     id: 5,
     category: "controllers",
-    name: "4G MODBUS RTU (TSRTU33314G)",
+    name: "4G MODBUS RTU (TSRTU3331)",
+    brochurePath: "assets/brochures/TSRTU3331.pdf",
+    overview: "4G MODBUS RTU (TSRTU3331) is an industrial remote terminal unit designed for reliable monitoring and control applications. The device features 4G LTE cellular connectivity for secure and wide-area communication. It provides 3 Analog Input (AI) channels supporting 4–20 mA current signals, enabling accurate acquisition of data from industrial sensors and transmitters. The unit also includes Digital Inputs (DI) and Digital Outputs (DO), with relay-type digital outputs supporting both dry and wet contact operation for flexible field control. The RTU supports electrically isolated Modbus RTU communication, ensuring stable and noise-immune operation in electrically harsh industrial environments. This device is well suited for compact remote monitoring, automation, and telemetry applications.",
     description:
       "Industrial RTU with 4G, LoRa, and WiFi for reliable data collection and cloud connectivity.",
     price: "N/A",
-    heroBgImage: "assets/Desktop_1440 x 626 px_6CH_RTU.jpg",
+    heroBgImage: "assets/Desktop_1440 x 626 px_3CHRTU.jpg",
     image: "assets/Media/device/products/4GMODBUS_RTU.jpg",
     communication: [
       "rtu",
@@ -635,6 +645,8 @@ const products = [
     id: 6,
     category: "controllers",
     name: "4G MODBUS IO MINI RTU (TSRTU2200)",
+    overview: "4G MODBUS IO MINI RTU (TSRTU2200) is a compact industrial remote I/O RTU designed for space-constrained and remote monitoring applications. The device features 4G LTE cellular connectivity for reliable wide-area communication. It provides 2 Analog Input (AI) channels supporting 4–20 mA current signals for industrial sensor interfacing. The unit includes 2 Digital Inputs (DI) supporting both dry and wet contact operation, along with one pulse interrupt input for accurate pulse counting from devices such as flow meters or energy meters. The RTU supports Modbus communication, enabling seamless integration with SCADA systems, PLCs, and other industrial controllers. With its compact design and industrial-grade features, the TSRTU2200 is ideal for lightweight automation, telemetry, and remote data acquisition applications.",
+    brochurePath: "assets/brochures/TSRTU62200.pdf",
     description:
       "Compact RTU with 4G and multi-radio support for industrial IoT data collection and transmission.",
     price: "N/A",
@@ -775,12 +787,14 @@ const products = [
   {
     id: 7,
     category: "io-modules",
-    name: "MINI ETHERNET 4CH IO Card (TSIOC003)",
+    name: "MINI ETHERNET 4CH IO Card (TSETH6442)",
+    overview: "MINI ETHERNET 4CH IO Card (TSETH6442) is a compact industrial Ethernet I/O card designed for reliable data acquisition and control in automation systems. The device supports Modbus over Ethernet, enabling seamless integration with PLCs, SCADA systems, and industrial networks. It features 10 Digital Inputs (DI), 4 Analog Inputs (AI), and 4 Digital Outputs (DO) for flexible field interfacing. Additionally, the card provides 2 Analog Output channels supporting 4–20 mA current signals, suitable for precise control of industrial actuators and transmitters. The device includes an onboard Real-Time Clock (RTC) for accurate timekeeping, along with external memory and Flash memory for secure storage of configuration data, logs, and system parameters. With its compact form factor and industrial-grade design, the TSETH6442 is ideal for distributed I/O, machine control, and industrial Ethernet applications.",
+    brochurePath: "assets/brochures/Mini Ethernet IO Card white.pdf",
     description:
       "Ethernet MODBUS RTU/IO module with cloud connectivity and PLC-like logic for industrial automation.",
     price: "N/A",
-    heroBgImage: "assets/Desktop_1440 x 626 px_MINIETH_IOCARD-NON.jpg",
-    image: "assets/Media/device/products/MINIETH_IOCARD.jpg",
+    heroBgImage: "assets/Desktop_1440 x 626 px_4G_MODBUS_IO_RTU.jpg",
+    image: "assets/Media/device/products/4CH_IOCARD_V2.jpg",
     communication: [
       "ethernet",
       "modbus-rtu",
@@ -911,6 +925,8 @@ const products = [
     id: 8,
     category: "gateways",
     name: "4G MODBUS GATEWAY v1 (TSGTW1003)",
+    overview:"4G MODBUS GATEWAY v1 (TSGTW1003) is a robust industrial communication gateway designed for reliable remote data acquisition and transmission. The device features 4G LTE cellular connectivity for wide-area communication and supports the Modbus protocol for seamless integration with meters, sensors, and industrial equipment. The gateway includes external memory and onboard Flash storage for secure buffering and retention of data during network or power loss, ensuring no data loss in critical applications. An integrated Real-Time Clock (RTC) provides accurate time stamping for logged data and event records. Designed for industrial environments, the TSGTW1003 is ideal for remote monitoring, telemetry, and cloud-connected automation systems.",
+    brochurePath: "",
     description:
       "Compact 4G-enabled MODBUS RTU gateway for remote industrial automation.",
     price: "N/A",
@@ -1011,6 +1027,7 @@ const products = [
     id: 9,
     category: "gateways",
     name: "Modbus RTU to TCP Gateway (TSGWMB0003)",
+    overview: "Modbus RTU to TCP Gateway (TSGWMB0003) is designed to seamlessly bridge serial Modbus RTU devices with Ethernet-based Modbus TCP networks. It features electrically isolated Modbus communication, ensuring safe and reliable operation in electrically noisy industrial environments. The gateway allows existing RS485-based meters, sensors, and controllers to be easily integrated into modern Ethernet and IP-based systems. With a built-in RTC, the device ensures accurate time-stamped data handling, while EEPROM and Flash memory securely store configuration parameters, logs, and system settings even during power interruptions. Compact, robust, and easy to deploy, the TSGWMB0003 is ideal for industrial automation, energy monitoring, building management systems, and SCADA applications where reliable Modbus connectivity is essential.",
     description:
       "Ethernet MODBUS RTU/IO module with cloud connectivity and PLC-like logic for industrial automation.",
     price: "N/A",
@@ -1138,6 +1155,7 @@ const products = [
     id: 10,
     category: "sensors",
     name: "MODBUS LORAWAN NODE (TSNODE0002)",
+    overview: "MODBUS LoRaWAN Node (TSNODE0002) is a low-power, battery-operated industrial node designed for long-range wireless communication using LoRaWAN. The device supports Modbus connectivity, enabling seamless integration of Modbus-based sensors and meters into LoRaWAN networks. Optimized for ultra-low power operation, the node is ideal for battery-powered deployments with long service life requirements. An onboard Real-Time Clock (RTC) provides accurate time stamping, while EEPROM ensures reliable non-volatile storage of configuration parameters and device settings. The compact and energy-efficient design makes the TSNODE0002 suitable for remote monitoring, data acquisition, and industrial IoT applications in challenging and power-constrained environments.",
     description:
       "Low-power MODBUS RTU gateway for LoRaWAN-based industrial sensor networks with cloud connectivity and remote monitoring.",
     price: "N/A",
@@ -1274,6 +1292,7 @@ const products = [
     id: 11,
     category: "io-modules",
     name: "8 CHANNEL IO Card (TSIOC001)",
+    overview: "8 CHANNEL IO Card (TSIOC001) is an industrial I/O expansion card designed for reliable data acquisition and monitoring applications. The device provides 8 Digital Input (DI) channels supporting both dry and wet contact operation, enabling flexible interfacing with field devices. It also features 8 Analog Input (AI) channels supporting 4–20 mA current signals, suitable for industrial sensors and transmitters. The card supports Modbus communication, allowing seamless integration with PLCs, RTUs, and SCADA systems. With its compact and robust design, the TSIOC001 is ideal for industrial automation, process monitoring, and distributed I/O applications.",
     description:
       "8-channel industrial I/O module with MODBUS RTU communication for sensor and actuator control in industrial automation.",
     price: "N/A",
@@ -1389,6 +1408,7 @@ const products = [
     id: 12,
     category: "controllers",
     name: "SINGLE PHASE ENERGY MONITORING RTU (TSRTU0002)",
+    overview: "single-phase energy monitoring and control applications. The device operates like a single-phase energy meter and includes an AC output for load control, allowing direct switching of the connected load. It supports monitoring of all essential electrical energy parameters, including voltage, current, power, energy, power factor, and frequency. A single CT input is provided for accurate current measurement, making it suitable for street lighting and other single-phase load monitoring applications. The RTU features built-in Wi-Fi connectivity for wireless data transmission and remote monitoring. An onboard Real-Time Clock (RTC) ensures accurate time-stamped data logging, while EEPROM and Flash memory provide secure non-volatile storage of configuration parameters, calibration data, and energy logs, even during power interruptions.",
     description:
       "Single phase energy monitoring device with MODBUS RTU communication for power consumption tracking in industrial environments.",
     price: "N/A",
@@ -1523,6 +1543,7 @@ const products = [
     id: 13,
     category: "controllers",
     name: "WEATHER STATION RTU (TSRTU0005)",
+    overview: "WEATHER STATION RTU (TSRTU0005) is a comprehensive industrial-grade RTU designed for weather and environmental monitoring applications. The device features 4G connectivity for remote data transmission and monitoring, along with Modbus support for seamless integration with SCADA and IoT systems. It is equipped with 6 Analog Input (AI) channels and 2 Digital Input (DI) channels for connecting a variety of sensors, including rain, temperature, humidity, wind speed, and other environmental sensors. The RTU includes built-in Wi-Fi, an LCD display for local visualization, and storage options such as EEPROM, Flash memory, SD card, and USB pendrive support for secure logging and data retention. An onboard Real-Time Clock (RTC) ensures accurate time-stamped measurements for reliable monitoring and analysis. The TSRTU0005 is ideal for remote weather stations, environmental monitoring, smart agriculture, and industrial IoT applications, providing robust, long-term, and accurate data acquisition in challenging outdoor conditions.",
     description:
       "Comprehensive weather monitoring solution with multiple sensors for temperature, humidity, pressure, and more.",
     price: "N/A",
@@ -1625,6 +1646,138 @@ const products = [
       },
     ],
   },
+  {
+    id: 14,
+    category: "io-modules",
+    name: "MINI ETHERNET 4CH IO Card (TSIOC002)",
+    overview: "MINI ETHERNET 4CH IO Card (TSIOC002) is a compact industrial I/O card designed for reliable data acquisition and control over Ethernet. The device supports Modbus TCP, enabling seamless integration with PLCs, SCADA systems, and industrial networks. It features 4 Analog Input (AI) channels, 4 Digital Input (DI) channels, and 4 Digital Output (DO) channels, offering flexible interfacing for sensors and actuators in industrial applications. The card includes EEPROM, Flash memory, and an RTC (Real-Time Clock) for secure non-volatile storage of configuration data, calibration data, and time-stamped logs. With its compact and robust design, the TSIOC002 is ideal for distributed I/O, machine control, and industrial Ethernet applications.",
+    description:
+      "Ethernet MODBUS RTU/IO module with cloud connectivity and PLC-like logic for industrial automation.",
+    price: "N/A",
+    heroBgImage: "assets/Desktop_1440 x 626 px_MINIETH_IOCARD-NON.jpg",
+    image: "assets/Media/device/products/MINIETH_IOCARD.jpg",
+    communication: [
+      "ethernet",
+      "modbus-rtu",
+      "modbus-tcp",
+      "mqtts",
+      "https",
+      "http",
+      "ftp",
+      "tcp",
+      "udp",
+      "dns",
+      "dhcp",
+    ],
+   technicalSpecs: [
+  {
+    id: 1,
+    title: "Power Supply Specifications",
+    rows: [
+      { label: "Supply Voltage", value: "12–24 V DC" },
+      { label: "Reverse Polarity Protection", value: "0–24 V DC" },
+      { label: "Max Operating Current", value: "< 100 mA" },
+      { label: "Peak Operating Current", value: "2 A @ network activities" }
+    ]
+  },
+  {
+    id: 2, 
+    title: "Communication Features",
+    rows: [
+      { label: "GSM/GPRS", value: "NA" },
+      { label: "WIFI", value: "IEEE 802.11 Wireless Network" }
+    ]
+  },
+  {
+    id: 3,
+    title: "Interfaces / IO Capabilities", 
+    rows: [
+      { label: "Digital Input", value: "3" },
+      { label: "Digital Output", value: "0" },
+      { label: "Analog Input", value: "3" },
+      { label: "Analog Output", value: "0" },
+      { label: "RS-485", value: "1" },
+      { label: "Counter Input", value: "1 (Counter Input)" },
+      { label: "Ethernet", value: "0" },
+      { label: "Antenna", value: "External WIFI" },
+      { label: "SIM Type", value: "Micro SIM" },
+      { label: "Flash Memory", value: "64 MB" },
+      { label: "RAM Memory", value: "512 KB" },
+      { label: "Real Time Clock", value: "External with battery backup" },
+      { label: "Watchdog", value: "External" },
+      { label: "LED Indication", value: "Available" },
+      { label: "Serial Port", value: "USB Mini" }
+    ]
+  },
+  {
+    id: 4,
+    title: "Communication Protocol Support",
+    rows: [
+      { 
+        label: "Industrial Protocols", 
+        value: "1. Transparent Modbus RTU<br>2. Modbus RTU Polling<br>3. Modbus RTU over TCP<br>4. Modbus RTU (Slave Mode)" 
+      },
+      { 
+        label: "IP & Application Protocols", 
+        value: "1. TCP/IP<br>2. HTTP/HTTPS<br>3. MQTT / MQTTs<br>4. FTP" 
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Physical Specifications",
+    rows: [
+      { label: "Dimensions (L × W × H)", value: "130 × 100 × 60 mm" },
+      { label: "Installation", value: "DIN Rail Mount" }
+    ]
+  },
+  {
+    id: 6,
+    title: "Operating Environment",
+    rows: [
+      { label: "Operating Temperature", value: "−40 °C to +85 °C" },
+      { label: "Operating Humidity", value: "Up to 85% RH" },
+      { label: "Vibration Resistance", value: "2 g, 10–150 Hz" },
+      { label: "Enclosure Protection", value: "IP65" }
+    ]
+  }
+],
+    useCases: [
+      "Industrial process control and automation",
+      "SCADA and energy monitoring",
+      "Environmental and sensor data acquisition",
+      "Smart building systems and security",
+      "Remote I/O expansion for Modbus networks",
+      "Solar and renewable monitoring systems",
+    ],
+    cloudFeatures: [
+      "Device Management: Add/remove devices, geolocation, health status",
+      "Live Data Monitoring: Centralized dashboard with real-time tracking",
+      "Graphical Representation: Multi-format trend charts",
+      "Historical Data & Reporting: Customizable WYSIWYG reports",
+      "Alert Management: Conditional rules with SMS/email notifications",
+      "Audit Logging: Historical alert logs for compliance",
+      "User Management: Role-based multi-tier access control",
+    ],
+    additionalFeatures: [
+      "Advanced interlocking logic reduces PLC dependency",
+      "Dual analog output support for actuator control",
+      "Ethernet-based RTU for panel and PLC integration",
+      "Compact DIN-rail design for industrial cabinets",
+      "Multiple configuration methods",
+      "Industrial-grade reliability",
+      "Wide operating temperature range",
+      "Optional extended storage for data logging",
+    ],
+    customizationOptions: [
+      "Protocol customization",
+      "I/O configuration",
+      "Enclosure modifications",
+      "Custom firmware development",
+      "Cloud platform integration",
+    ],
+  },
+
 ];
 // SVG Icons for different product categories
 const categoryIcons = {
@@ -1656,10 +1809,11 @@ const categoryNames = {
 // State management
 let currentCategory = "all";
 let activeFilters = {
+  category: [],
   communication: [],
   power: [],
   io: [],
-  application: [],
+  application: []
 };
 
 // Initialize the page
@@ -1706,14 +1860,20 @@ function setupEventListeners() {
   const clearButton = document.querySelector(".clear-filters");
   clearButton.addEventListener("click", function () {
     activeFilters = {
+      category: [],
       communication: [],
       power: [],
       io: [],
-      application: [],
+      application: []
     };
 
     const checkboxes = document.querySelectorAll(".filter-checkbox input");
     checkboxes.forEach((cb) => (cb.checked = false));
+
+    currentCategory = "all";
+    const navItems = document.querySelectorAll(".nav-item");
+    navItems.forEach((nav) => nav.classList.remove("active"));
+    navItems[0].classList.add("active");
 
     renderProducts();
   });
@@ -1766,9 +1926,11 @@ document.addEventListener("DOMContentLoaded", function () {
 function filterProducts() {
   let filtered = products;
 
-  // Filter by category
-  if (currentCategory !== "all") {
-    filtered = filtered.filter((p) => p.category === currentCategory);
+  // Filter by category from checkboxes
+  if (activeFilters.category.length > 0) {
+    filtered = filtered.filter((p) => 
+      activeFilters.category.includes(p.category)
+    );
   }
 
   // Filter by communication

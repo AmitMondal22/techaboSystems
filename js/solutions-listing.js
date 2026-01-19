@@ -1,4 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Sidebar Toggle - Only runs on mobile devices
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarOverlay = document.querySelector('.sidebar-overlay');
+    
+    // Only initialize mobile sidebar functionality if elements exist and we're on mobile
+    if (sidebarToggle && sidebar && sidebarOverlay && window.innerWidth <= 768) {
+        
+        // Toggle sidebar function
+        function toggleSidebar() {
+            const isOpen = sidebar.classList.contains('active');
+            
+            if (isOpen) {
+                // Close sidebar
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                sidebarToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            } else {
+                // Open sidebar
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                sidebarToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // Sidebar toggle click handler
+        sidebarToggle.addEventListener('click', toggleSidebar);
+        
+        // Overlay click handler
+        sidebarOverlay.addEventListener('click', toggleSidebar);
+        
+        // Close sidebar on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                toggleSidebar();
+            }
+        });
+        
+        // Handle window resize - reset sidebar state if switching to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && sidebar.classList.contains('active')) {
+                // Close sidebar and reset state if switching to desktop
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                sidebarToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
     // Get all navigation items and solution cards
     const navItems = document.querySelectorAll('.solutions-item');
     const solutionCards = document.querySelectorAll('.solution-card');

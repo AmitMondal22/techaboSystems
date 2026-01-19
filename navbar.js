@@ -44,10 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add active class to current page link
     if (linkHref === currentPage) {
-      link.classList.add('active', 'nav-link-active');
-        link.classList.add('active');
+      link.classList.add('active');
     }
-});
+  });
   // Handle window resize
   function handleResize() {
     if (window.innerWidth > 992) {

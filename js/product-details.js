@@ -1,13 +1,16 @@
+// Make product globally accessible
+window.currentProduct = null;
+
 document.addEventListener('DOMContentLoaded', function() {
     // Get product ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id')) || 1; // Default to first product if no ID specified
 
     // Find the product in the products array
-    const product = products.find(p => p.id === productId);
+    window.currentProduct = products.find(p => p.id === productId);
     
-    if (product) {
-        renderProductPage(product);
+    if (window.currentProduct) {
+        renderProductPage(window.currentProduct);
     } else {
         console.error('Product not found');
         // Redirect to products page or show error
@@ -110,6 +113,12 @@ function renderProductPage(product) {
         
         // Add smooth transition for background changes
         heroSection.style.transition = 'background 0.5s ease-in-out';
+    }
+    
+    // Update overview text if it exists in product data
+    const overviewTextElement = document.querySelector('.overview-text p');
+    if (overviewTextElement && product.overview) {
+        overviewTextElement.textContent = product.overview;
     }
     
     document.querySelector('.hero-category').textContent = product.category.toUpperCase();

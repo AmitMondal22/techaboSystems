@@ -53,7 +53,7 @@ const solutions = [
         heroImage: 'assets/dg-monitoring.png',
         heroTitle: 'Guaranteed Reliability for Your Backup Power',
         heroSubtitle: 'Real-time monitoring and fuel security for your DG fleet',
-        architectureDiagram: '',
+        architectureDiagram: 'assets/5177d796-42bd-44a6-b19c-decc1ecd8974.JPG',
         problem: 'Diesel generator failures during power outages can lead to costly downtime, while fuel theft and inefficient usage drive up operational costs.',
         solution: 'Our comprehensive DG monitoring solution provides real-time visibility into your backup power infrastructure, preventing failures and optimizing fuel usage.',
         features: [
@@ -70,14 +70,38 @@ const solutions = [
             'Controller Diagnostics': 'Fault codes (controller), last error timestamp'
         },
         useCases: ['Telecom towers','Hospitals','Data centers','Manufacturing facilities','Commercial buildings'],
-        relatedProducts: [4, 5, 6]
+        relatedProducts: [4, 5, 6],
+         architecture: [
+  {
+    title: 'DG Sensors & Controllers',
+    description: 'Capture real-time data on fuel levels, engine health, electrical output, and operational status.'
+  },
+  {
+    title: 'Edge Gateway',
+    description: 'Aggregates sensor data, normalizes protocols, performs edge filtering, and buffers during connectivity loss.'
+  },
+  {
+    title: 'Secure Connectivity',
+    description: 'Transmits encrypted telemetry to the cloud via 4G/5G, Ethernet, or Wi-Fi with failover support.'
+  },
+  {
+    title: 'Cloud Analytics Engine',
+    description: 'Processes incoming data, detects anomalies, predicts failures, and generates insights and alerts.'
+  },
+  {
+    title: 'Dashboards & Integrations',
+    description: 'Provides real-time monitoring, reports, and APIs for operators, SCADA, and enterprise systems.'
+  }
+]
+
+        
     },
     {
         id: 'flow-meter',
         title: 'Precision Flow Meter Monitoring',
         category: 'monitoring',
-        heroImage: 'assets/Media/solutions/flow-meter.jpg',
-        heroTitle: 'Precision Flow Meter Monitoring for Real-time Consumption and Leak Detection.',
+        heroImage: 'assets/flow_monitoring.png',
+        heroTitle: 'Precision Flow Meter Monitoring',
         heroSubtitle: 'Gain granular visibility into your water, gas, or process fluid usage. Our IoT Gateway digitizes any flow meter for instant leak alerts, accurate billing, and waste reduction.',
         architectureDiagram: '',
         problem: 'Undetected leaks can waste thousands of liters and inflate utility bills. Manual flow logging is error-prone and fails to provide the real-time data needed for preventative action.',
@@ -102,7 +126,7 @@ const solutions = [
         id: 'transformer',
         title: 'Transformer Monitoring',
         category: 'energy',
-        heroImage: 'assets/Media/solutions/transformer.jpg',
+        heroImage: 'assets/Media/transformer.png',
         heroTitle: 'Prevent Catastrophic Failure: Transformer Monitoring.',
         heroSubtitle: 'Maximize the lifespan of your highest-value assets with continuous, real-time health data to manage thermal stress, prevent overloading, and preemptively detect issues.',
         architectureDiagram: '',
@@ -128,7 +152,7 @@ const solutions = [
         id: 'temp-humidity',
         title: 'Ambient Temperature & Humidity Monitoring',
         category: 'monitoring',
-                heroImage: 'assets/Media/solutions/temp-humidity.jpg',
+                heroImage: 'assets/Media/ambientmonitoring.png',
         heroTitle: 'Precise Environmental Control for Asset Safety and HVAC Efficiency.',
         heroSubtitle: 'Protect sensitive electronics, maintain air quality, and verify HVAC performance with continuous, highly accurate temperature and humidity mapping across your facility.',
         architectureDiagram: '',
@@ -154,7 +178,7 @@ const solutions = [
         id: 'structural-health',
         title: 'Structural Health Monitoring (SHM)',
         category: 'infrastructure',
-        heroImage: 'assets/Media/solutions/structural-health.jpg',
+        heroImage: 'assets/Media/bridgemonitoring.png',
         heroTitle: 'Continuous Structural Integrity Monitoring for Critical Assets.',
         heroSubtitle: 'Gain verifiable, real-time data on asset health. Monitor bridges, dams, tunnels, and aging buildings for excessive vibration, tilt, and strain.',
         architectureDiagram: '',
@@ -180,7 +204,7 @@ const solutions = [
         id: 'fire-systems',
         title: 'Fire System Integration & Remote Alerting',
         category: 'safety',
-        heroImage: 'assets/Media/solutions/fire-systems.jpg',
+        heroImage: 'assets/Media/firemonitoring.png',
         heroTitle: 'Instant Remote Alerting and Integrity Check for Fire Systems.',
         heroSubtitle: 'Cut minutes off your emergency response time. Our IoT Gateway connects to your existing FACP to provide immediate, off-site notifications and continuous system health verification.',
         architectureDiagram: '',
@@ -206,7 +230,7 @@ const solutions = [
         id: 'scada-integration',
         title: 'SCADA & Legacy OT Integration',
         category: 'infrastructure',
-        heroImage: 'assets/Media/solutions/scada-integration.jpg',
+        heroImage: 'assets/Media/SCADA.png',
         heroTitle: 'Secure Data Bridge for SCADA and Legacy OT Networks.',
         heroSubtitle: 'Unlock proprietary OT data. Our IoT Gateway serves as a secure protocol translator, unifying legacy PLC/RTU data with your modern Cloud, ERP, and BI platforms.',
         architectureDiagram: '',
